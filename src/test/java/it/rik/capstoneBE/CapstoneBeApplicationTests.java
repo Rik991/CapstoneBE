@@ -1,4 +1,4 @@
-package it.rik.CapstoneBE;
+package it.rik.capstoneBE;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
