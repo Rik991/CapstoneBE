@@ -29,6 +29,11 @@ public class ExceptionsHandler {
         return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(value = UploadException.class)
+    protected ResponseEntity<Object> uploadException(UploadException e) {
+        return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
+
 
 
     //TODO
