@@ -1,0 +1,13 @@
+package it.rik.capstoneBE.price;
+
+import it.rik.capstoneBE.autoparts.AutopartsDTO;
+import it.rik.capstoneBE.user.reseller.ResellerDTO;
+import lombok.Data;
+
+@Data
+public class PriceDTO {
+    private Long id;
+    private double prezzo;
+    private AutopartsDTO autoparts;
+    private ResellerDTO venditore;
+}
