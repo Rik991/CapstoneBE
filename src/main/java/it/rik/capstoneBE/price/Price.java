@@ -1,6 +1,6 @@
 package it.rik.capstoneBE.price;
 
-import it.rik.capstoneBE.autoparts.Autoparts;
+import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -20,7 +20,7 @@ public class Price {
 
     @ManyToOne
     @JoinColumn(name = "ricambio_id", nullable = false)
-    private Autoparts autoparts;
+    private Autopart autopart;
 
     @ManyToOne
     @JoinColumn(name = "venditore_id", nullable = false)

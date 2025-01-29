@@ -10,7 +10,7 @@ import java.util.Set;
 @Data
 @Entity
 @Table(name = "autoparts")
-public class Autoparts {
+public class Autopart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,6 +37,6 @@ public class Autoparts {
     private Set<Vehicle> veicoliCompatibili;
 
 
-    @OneToMany(mappedBy = "autoparts", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL)
     private Set<Price> prezzi;
 }

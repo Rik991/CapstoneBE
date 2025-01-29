@@ -3,8 +3,8 @@ package it.rik.capstoneBE.autoDB;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.rik.capstoneBE.auth.RegisterRequest;
-import it.rik.capstoneBE.autoparts.Autoparts;
-import it.rik.capstoneBE.autoparts.AutopartsRepository;
+import it.rik.capstoneBE.autoparts.Autopart;
+import it.rik.capstoneBE.autoparts.AutopartRepository;
 import it.rik.capstoneBE.price.Price;
 import it.rik.capstoneBE.price.PriceRepository;
 import it.rik.capstoneBE.user.User;
@@ -36,7 +36,7 @@ public class PopulateDB {
     private ResellerRepository resellerRepository;
 
     @Autowired
-    private AutopartsRepository autopartsRepository;
+    private AutopartRepository autopartRepository;
 
     @Autowired
     private PriceRepository priceRepository;
@@ -86,30 +86,30 @@ public class PopulateDB {
     }
 
     private void loadAutoparts() {
-        if (autopartsRepository.count() == 0) {
+        if (autopartRepository.count() == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/data/autoparts.json")) {
                 if (inputStream == null) throw new RuntimeException("File 'autoparts.json' non trovato");
 
                 List<Map<String, Object>> rawParts = objectMapper.readValue(inputStream, new TypeReference<>() {});
-                List<Autoparts> autopartsList = new ArrayList<>();
+                List<Autopart> autopartList = new ArrayList<>();
 
                 for (Map<String, Object> rawPart : rawParts) {
-                    Autoparts autoparts = new Autoparts();
-                    autoparts.setNome((String) rawPart.get("nome"));
-                    autoparts.setCodiceOe((String) rawPart.get("codiceOe"));
-                    autoparts.setCategoria((String) rawPart.get("categoria"));
+                    Autopart autopart = new Autopart();
+                    autopart.setNome((String) rawPart.get("nome"));
+                    autopart.setCodiceOe((String) rawPart.get("codiceOe"));
+                    autopart.setCategoria((String) rawPart.get("categoria"));
 
                     List<Integer> vehicleIds = (List<Integer>) rawPart.get("veicoliCompatibili");
                     List<Long> vehicleIdsLong = vehicleIds.stream().map(Integer::longValue).collect(Collectors.toList());
                     Set<Vehicle> vehicles = new HashSet<>(vehicleRepository.findAllById(vehicleIdsLong));
 
 
-                    autoparts.setVeicoliCompatibili(vehicles);
+                    autopart.setVeicoliCompatibili(vehicles);
 
-                    autopartsList.add(autoparts);
+                    autopartList.add(autopart);
                 }
 
-                autopartsRepository.saveAll(autopartsList);
+                autopartRepository.saveAll(autopartList);
                 System.out.println("Database popolato con ricambi di esempio.");
             } catch (Exception e) {
                 System.err.println("Errore durante il popolamento dei ricambi: " + e.getMessage());
@@ -132,12 +132,12 @@ public class PopulateDB {
                     int autopartsId = (Integer) rawPrice.get("autopartsId");
                     int venditoreId = (Integer) rawPrice.get("venditoreId");
 
-                    Autoparts autoparts = autopartsRepository.findById((long) autopartsId)
+                    Autopart autopart = autopartRepository.findById((long) autopartsId)
                             .orElseThrow(() -> new RuntimeException("Autoparts ID " + autopartsId + " non trovato"));
                     Reseller reseller = resellerRepository.findById((long) venditoreId)
                             .orElseThrow(() -> new RuntimeException("Venditore ID " + venditoreId + " non trovato"));
 
-                    price.setAutoparts(autoparts);
+                    price.setAutopart(autopart);
                     price.setVenditore(reseller);
                     pricesList.add(price);
                 }

@@ -1,6 +1,6 @@
 package it.rik.capstoneBE.vehicle;
 
-import it.rik.capstoneBE.autoparts.Autoparts;
+import it.rik.capstoneBE.autoparts.Autopart;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,7 +38,7 @@ public class Vehicle {
     private int fineProduzione;
 
     @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.EAGER)
-    private Set<Autoparts> ricambi;
+    private Set<Autopart> ricambi;
 
 
 }
