@@ -20,8 +20,13 @@ public class Vehicle {
     @Column(nullable = false)
     private String modello;
 
-    @Column(nullable = false)
-    private String tipoMotore;
+    @ElementCollection
+    @CollectionTable(
+            name = "vehicle_engine_types",
+            joinColumns = @JoinColumn(name = "vehicle_id")
+    )
+    @Column(name = "tipo_motore")
+    private Set<String> tipiMotore;
 
     private String carrozzeria;
 
@@ -32,5 +37,4 @@ public class Vehicle {
 
     @ManyToMany(mappedBy = "veicoliCompatibili")
     private Set<Autoparts> ricambi;
-
 }

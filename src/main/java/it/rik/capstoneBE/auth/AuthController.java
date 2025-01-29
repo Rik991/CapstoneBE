@@ -38,7 +38,7 @@ public class AuthController {
         return new ResponseEntity<>(registeredUser, HttpStatus.CREATED);
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+
     @PostMapping(path = "/register-reseller", consumes = {"multipart/form-data"})
     public ResponseEntity<User> registerReseller(@RequestParam("appUser") String appUser,
                                                  @RequestParam(value = "avatar", required = false) MultipartFile avatar,
