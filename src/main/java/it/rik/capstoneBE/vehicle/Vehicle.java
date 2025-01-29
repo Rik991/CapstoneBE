@@ -1,5 +1,6 @@
 package it.rik.capstoneBE.vehicle;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.rik.capstoneBE.autoparts.Autopart;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -22,12 +23,13 @@ public class Vehicle {
     @Column(nullable = false)
     private String modello;
 
-    @ElementCollection(fetch = FetchType.EAGER) // Caricamento immediato
+    @ElementCollection(fetch = FetchType.LAZY) // Caricamento immediato
     @CollectionTable(
             name = "vehicle_engine_types",
             joinColumns = @JoinColumn(name = "vehicle_id")
     )
     @Column(name = "tipo_motore")
+    @JsonIgnore
     private Set<String> tipiMotore;
 
     private String carrozzeria;
@@ -37,7 +39,8 @@ public class Vehicle {
 
     private int fineProduzione;
 
-    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Autopart> ricambi;
 
 

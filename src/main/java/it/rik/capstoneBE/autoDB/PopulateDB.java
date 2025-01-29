@@ -26,6 +26,8 @@ import java.util.stream.Collectors;
 @Transactional
 public class PopulateDB {
 
+    //RICORDA DI CAMBIARE IL FATCHTYPE NELLE RELAZIONI DA LAZY A EAGER PER GENERARE CORRETTAMENTE IL DB
+
     @Autowired
     private UserService userService;
 

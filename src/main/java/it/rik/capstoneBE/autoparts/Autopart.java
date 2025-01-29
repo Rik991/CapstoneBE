@@ -1,5 +1,6 @@
 package it.rik.capstoneBE.autoparts;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import it.rik.capstoneBE.price.Price;
 import it.rik.capstoneBE.vehicle.Vehicle;
 import jakarta.persistence.*;
@@ -28,15 +29,17 @@ public class Autopart {
 
     private String immagine;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "vehicle_parts",
             joinColumns = @JoinColumn(name = "ricambio_id"),
             inverseJoinColumns = @JoinColumn(name = "veicolo_id")
     )
+    @JsonIgnore
     private Set<Vehicle> veicoliCompatibili;
 
 
     @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<Price> prezzi;
 }

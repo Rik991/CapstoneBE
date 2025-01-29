@@ -1,6 +1,5 @@
 package it.rik.capstoneBE.price;
 
-import it.rik.capstoneBE.autoparts.AutopartsDTO;
 import it.rik.capstoneBE.user.reseller.ResellerDTO;
 import lombok.Data;
 
