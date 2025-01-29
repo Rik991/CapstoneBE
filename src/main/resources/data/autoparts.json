@@ -1,0 +1,12 @@
+[
+  { "nome": "Filtro Olio", "codiceOe": "12345ABC", "categoria": "Filtri", "veicoliCompatibili": [1, 2, 3, 4] },
+  { "nome": "Pasticche Freni", "codiceOe": "67890XYZ", "categoria": "Freni", "veicoliCompatibili": [5, 6, 7, 8] },
+  { "nome": "Dischi Freni", "codiceOe": "11223QWE", "categoria": "Freni", "veicoliCompatibili": [9, 10, 11, 12] },
+  { "nome": "Batteria Auto 60Ah", "codiceOe": "33445RTY", "categoria": "Elettrico", "veicoliCompatibili": [13, 14, 15, 16] },
+  { "nome": "Filtro Aria", "codiceOe": "55678UOP", "categoria": "Filtri", "veicoliCompatibili": [17, 18, 19, 20] },
+  { "nome": "Ammortizzatori Posteriori", "codiceOe": "66789IOP", "categoria": "Sospensioni", "veicoliCompatibili": [21, 22, 23] },
+  { "nome": "Candela di Accensione", "codiceOe": "99012ASD", "categoria": "Motore", "veicoliCompatibili": [24, 25, 26] },
+  { "nome": "Kit Catena Distribuzione", "codiceOe": "22334FGH", "categoria": "Trasmissione", "veicoliCompatibili": [27, 28, 29] },
+  { "nome": "Termostato Motore", "codiceOe": "44556JKL", "categoria": "Raffreddamento", "veicoliCompatibili": [30, 31, 32] },
+  { "nome": "Sensore ABS", "codiceOe": "77889MNB", "categoria": "Elettronica", "veicoliCompatibili": [33, 34, 35] }
+]

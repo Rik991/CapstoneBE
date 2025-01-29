@@ -3,15 +3,17 @@ package it.rik.capstoneBE.vehicle;
 import it.rik.capstoneBE.autoparts.Autoparts;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Data
+@NoArgsConstructor
 @Entity
 @Table(name = "vehicles")
 public class Vehicle {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -20,7 +22,7 @@ public class Vehicle {
     @Column(nullable = false)
     private String modello;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER) // Caricamento immediato
     @CollectionTable(
             name = "vehicle_engine_types",
             joinColumns = @JoinColumn(name = "vehicle_id")
@@ -35,6 +37,8 @@ public class Vehicle {
 
     private int fineProduzione;
 
-    @ManyToMany(mappedBy = "veicoliCompatibili")
+    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.EAGER)
     private Set<Autoparts> ricambi;
+
+
 }

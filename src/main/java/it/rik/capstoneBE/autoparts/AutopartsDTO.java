@@ -15,5 +15,4 @@ public class AutopartsDTO {
     private String categoria;
     private String immagine;
     private Set<VehicleDTO> veicoliCompatibili;
-    private Set<PriceDTO> prezzi;
 }

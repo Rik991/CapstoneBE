@@ -12,7 +12,7 @@ import java.util.Set;
 @Table(name = "autoparts")
 public class Autoparts {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
@@ -28,13 +28,14 @@ public class Autoparts {
 
     private String immagine;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "vehicle_parts",
             joinColumns = @JoinColumn(name = "ricambio_id"),
             inverseJoinColumns = @JoinColumn(name = "veicolo_id")
     )
     private Set<Vehicle> veicoliCompatibili;
+
 
     @OneToMany(mappedBy = "autoparts", cascade = CascadeType.ALL)
     private Set<Price> prezzi;

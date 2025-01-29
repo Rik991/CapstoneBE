@@ -4,13 +4,15 @@ import it.rik.capstoneBE.autoparts.Autoparts;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@NoArgsConstructor
 @Table(name = "prices")
 public class Price {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
 
     @Column(nullable = false)

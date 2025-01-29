@@ -8,6 +8,5 @@ import lombok.Data;
 public class PriceDTO {
     private Long id;
     private double prezzo;
-    private AutopartsDTO autoparts;
     private ResellerDTO venditore;
 }

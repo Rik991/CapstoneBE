@@ -1,0 +1,14 @@
+[
+  { "autopartsId": 1, "venditoreId": 1, "prezzo": 29.99 },
+  { "autopartsId": 1, "venditoreId": 2, "prezzo": 25.99 },
+  { "autopartsId": 2, "venditoreId": 2, "prezzo": 45.50 },
+  { "autopartsId": 2, "venditoreId": 3, "prezzo": 35.50 },
+  { "autopartsId": 3, "venditoreId": 3, "prezzo": 65.00 },
+  { "autopartsId": 4, "venditoreId": 4, "prezzo": 120.00 },
+  { "autopartsId": 5, "venditoreId": 5, "prezzo": 19.99 },
+  { "autopartsId": 6, "venditoreId": 1, "prezzo": 89.90 },
+  { "autopartsId": 7, "venditoreId": 2, "prezzo": 8.50 },
+  { "autopartsId": 8, "venditoreId": 3, "prezzo": 154.30 },
+  { "autopartsId": 9, "venditoreId": 4, "prezzo": 32.75 },
+  { "autopartsId": 10, "venditoreId": 5, "prezzo": 67.40 }
+]

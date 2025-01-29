@@ -47,18 +47,18 @@ public class AuthRunner implements ApplicationRunner {
             userService.registerUser(userRequest, null, Set.of(Role.ROLE_USER));
         }
 
-        Optional<User> resellerUser = userService.findByUsername("reseller");
-        if (resellerUser.isEmpty()) {
-            RegisterRequest resellerRequest = new RegisterRequest();
-            resellerRequest.setUsername("reseller");
-            resellerRequest.setPassword("resellerpwd");
-            resellerRequest.setEmail("reseller@epicode.it");
-            resellerRequest.setName("Reseller");
-            resellerRequest.setSurname("Venditore");
-            resellerRequest.setRagioneSociale("Reseller SRL");
-            resellerRequest.setPartitaIva("12345678901");
-            userService.registerReseller(resellerRequest, null);
-        }
+//        Optional<User> resellerUser = userService.findByUsername("reseller");
+//        if (resellerUser.isEmpty()) {
+//            RegisterRequest resellerRequest = new RegisterRequest();
+//            resellerRequest.setUsername("reseller");
+//            resellerRequest.setPassword("resellerpwd");
+//            resellerRequest.setEmail("reseller@epicode.it");
+//            resellerRequest.setName("Reseller");
+//            resellerRequest.setSurname("Venditore");
+//            resellerRequest.setRagioneSociale("Reseller SRL");
+//            resellerRequest.setPartitaIva("12345678901");
+//            userService.registerReseller(resellerRequest, null);
+//        }
     }
 }
 
