@@ -52,6 +52,15 @@ public class AutopartService {
                 .collect(Collectors.toList());
     }
 
+    public AutopartResponseDTO getAutopartById(Long id) {
+        Autopart autopart = autopartRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Autopart non trovato con ID: " + id));
+        List<Price> prices = priceRepository.findAllPricesByAutopartId(id);
+        return autopartMapper.toDTO(autopart, prices);
+    }
+
+
+
 
     @Transactional
     public Autopart createAutopartWithPrice(AutopartPriceRequestDTO request) {
@@ -84,5 +93,20 @@ public class AutopartService {
         priceRepository.save(price);
 
         return autopart;
+    }
+
+    //recupero i ricambi per un determinato venditore
+    public List<AutopartResponseDTO> getAutopartsByResellerId(Long resellerId) {
+        List<Price> prices = priceRepository.findAllPricesByResellerId(resellerId);
+        Map<Long, List<Price>> pricesByAutopartId = prices.stream()
+                .collect(Collectors.groupingBy(price -> price.getAutopart().getId()));
+
+        return pricesByAutopartId.entrySet().stream()
+                .map(entry -> {
+                    Autopart autopart = entry.getValue().get(0).getAutopart();
+                    List<Price> autopartPrices = entry.getValue();
+                    return autopartMapper.toDTO(autopart, autopartPrices);
+                })
+                .collect(Collectors.toList());
     }
 }

@@ -21,11 +21,22 @@ public class AutopartController {
     }
 
 
-
-
     @GetMapping
     public ResponseEntity<List<AutopartResponseDTO>> getAllAutoparts() {
         List<AutopartResponseDTO> autoparts = autopartService.getAllAutoparts();
+        return ResponseEntity.ok(autoparts);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<AutopartResponseDTO> getAutopartById(@PathVariable Long id) {
+        AutopartResponseDTO autopart = autopartService.getAutopartById(id);
+        return ResponseEntity.ok(autopart);
+    }
+
+    //autopart by reseller id
+    @GetMapping("/reseller/{id}")
+    public ResponseEntity<List<AutopartResponseDTO>> getAutopartsByResellerId(@PathVariable Long id) {
+        List<AutopartResponseDTO> autoparts = autopartService.getAutopartsByResellerId(id);
         return ResponseEntity.ok(autoparts);
     }
 }
