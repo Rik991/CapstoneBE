@@ -21,6 +21,8 @@ public class AutopartController {
     }
 
 
+
+
     @GetMapping
     public ResponseEntity<List<AutopartResponseDTO>> getAllAutoparts() {
         List<AutopartResponseDTO> autoparts = autopartService.getAllAutoparts();

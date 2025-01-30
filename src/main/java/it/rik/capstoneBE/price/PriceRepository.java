@@ -9,4 +9,5 @@ public interface PriceRepository extends JpaRepository<Price, Long> {
     @Query("SELECT DISTINCT p FROM Price p LEFT JOIN FETCH p.venditore LEFT JOIN FETCH p.autopart")
     List<Price> findAllPricesWithResellers();
 
+
 }

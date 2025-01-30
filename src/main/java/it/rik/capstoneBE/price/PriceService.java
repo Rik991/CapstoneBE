@@ -15,4 +15,6 @@ public class PriceService {
     public List<Price> getAllPrices() {
         return priceRepository.findAll();
     }
+
+
 }
