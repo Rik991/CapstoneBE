@@ -15,4 +15,13 @@ public class VehicleService {
     public List<Vehicle> getAllVehicles() {
         return vehicleRepository.findAll();
     }
+
+    public List<Vehicle> getAllByMarca(String marca) {
+        return vehicleRepository.findByMarca(marca);
+    }
+
+    public List<String> getAllMarche(){
+        return vehicleRepository.findAllMarche();
+    }
+
 }
