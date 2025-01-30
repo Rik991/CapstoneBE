@@ -43,7 +43,8 @@ public class AuthController {
     public ResponseEntity<User> registerReseller(@RequestParam("appUser") String appUser,
                                                  @RequestParam(value = "avatar", required = false) MultipartFile avatar,
                                                  @RequestParam("ragioneSociale") String ragioneSociale,
-                                                 @RequestParam("partitaIva") String partitaIva) {
+                                                 @RequestParam("partitaIva") String partitaIva,
+                                                 @RequestParam("sitoWeb") String sitoWeb) {
         ObjectMapper objectMapper = new ObjectMapper();
         RegisterRequest registerRequest;
 
@@ -55,6 +56,7 @@ public class AuthController {
 
         registerRequest.setRagioneSociale(ragioneSociale);
         registerRequest.setPartitaIva(partitaIva);
+        registerRequest.setSitoWeb(sitoWeb);
 
         User registeredReseller = userService.registerReseller(registerRequest, avatar);
         return new ResponseEntity<>(registeredReseller, HttpStatus.CREATED);
