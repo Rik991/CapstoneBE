@@ -24,22 +24,22 @@ public class Autopart {
 
     private String descrizione;
 
-    @Column(nullable = false)
     private String categoria;
+
+    @Enumerated(EnumType.STRING)
+    private Condizione condizione;
 
     private String immagine;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "vehicle_parts",
             joinColumns = @JoinColumn(name = "ricambio_id"),
             inverseJoinColumns = @JoinColumn(name = "veicolo_id")
     )
-    @JsonIgnore
     private Set<Vehicle> veicoliCompatibili;
 
 
     @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL)
-    @JsonIgnore
     private Set<Price> prezzi;
 }
