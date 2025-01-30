@@ -5,7 +5,8 @@ import lombok.Data;
 
 @Data
 public class PriceDTO {
-    private Long id;
+
     private double prezzo;
-    private ResellerDTO venditore;
+    private Long autopartId;
+    private Long venditoreId;
 }

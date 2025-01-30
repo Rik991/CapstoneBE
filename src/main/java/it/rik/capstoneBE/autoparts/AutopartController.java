@@ -1,29 +1,23 @@
+// AutopartController.java
 package it.rik.capstoneBE.autoparts;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/autoparts")
+@RequestMapping("/api/autoparts")
 public class AutopartController {
 
     @Autowired
     private AutopartService autopartService;
 
-//    @GetMapping
-//    public ResponseEntity<List<AutopartDTO>> getAllAutoparts() {
-//        return ResponseEntity.ok(autopartService.getAllAutoparts());
-//    }
-
-    @GetMapping
-    public ResponseEntity<List<Autopart>> getAllAutoparts() {
-        return ResponseEntity.ok(autopartService.getAllAutoparts());
+    @PostMapping
+    public ResponseEntity<Autopart> createAutopartWithPrice(@RequestBody AutopartPriceRequestDTO request) {
+        Autopart createdAutopart = autopartService.createAutopartWithPrice(request);
+        return ResponseEntity.ok(createdAutopart);
     }
+
+
 
 }
