@@ -15,8 +15,10 @@ public class AutopartDTO {
         private String codiceOe;
         private String descrizione;
         private String categoria;
+        private String condizione;
         private String immagine;
         private Set<VehicleDTO> veicoliCompatibili;
         private Double prezzo;
         private String ragioneSociale;
+        private String sitoWeb;
 }

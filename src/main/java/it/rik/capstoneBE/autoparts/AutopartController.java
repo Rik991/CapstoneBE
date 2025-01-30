@@ -16,8 +16,8 @@ public class AutopartController {
     @Autowired
     private AutopartService autopartService;
 
-    @GetMapping
-    public ResponseEntity<List<AutopartDTO>> getAllAutoparts() {
-        return ResponseEntity.ok(autopartService.getAllAutoparts());
-    }
+//    @GetMapping
+//    public ResponseEntity<List<AutopartDTO>> getAllAutoparts() {
+//        return ResponseEntity.ok(autopartService.getAllAutoparts());
+//    }
 }

@@ -24,8 +24,10 @@ public class Autopart {
 
     private String descrizione;
 
-    @Column(nullable = false)
     private String categoria;
+
+    @Enumerated(EnumType.STRING)
+    private Condizione condizione;
 
     private String immagine;
 

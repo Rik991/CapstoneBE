@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import it.rik.capstoneBE.auth.RegisterRequest;
 import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.autoparts.AutopartRepository;
+import it.rik.capstoneBE.autoparts.Condizione;
 import it.rik.capstoneBE.price.Price;
 import it.rik.capstoneBE.price.PriceRepository;
 import it.rik.capstoneBE.user.User;
@@ -101,6 +102,7 @@ public class PopulateDB {
                     autopart.setNome((String) rawPart.get("nome"));
                     autopart.setCodiceOe((String) rawPart.get("codiceOe"));
                     autopart.setCategoria((String) rawPart.get("categoria"));
+                    autopart.setCondizione(Condizione.valueOf((String) rawPart.get("condizione")));
 
                     List<Integer> vehicleIds = (List<Integer>) rawPart.get("veicoliCompatibili");
                     List<Long> vehicleIdsLong = vehicleIds.stream().map(Integer::longValue).collect(Collectors.toList());

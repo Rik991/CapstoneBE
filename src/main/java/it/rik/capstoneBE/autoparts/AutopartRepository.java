@@ -8,12 +8,12 @@ import java.util.List;
 public interface AutopartRepository extends JpaRepository<Autopart, Long> {
 
 
-    @Query("SELECT new it.rik.capstoneBE.autoparts.AutopartDTO(a.id, a.nome, a.codiceOe, a.descrizione, a.categoria, a.immagine, null, p.prezzo, r.ragioneSociale) " +
-            "FROM Autopart a " +
-            "JOIN a.prezzi p " +
-            "JOIN p.venditore r" +
-            " ORDER BY a.id DESC")
-    List<AutopartDTO> findAllWithPriceAndReseller();
+//    @Query("SELECT new it.rik.capstoneBE.autoparts.AutopartDTO(a.id, a.nome, a.codiceOe, a.descrizione, a.categoria, a.condizione, a.immagine, p.prezzo, r.ragioneSociale, r.sitoWeb) " +
+//            "FROM Autopart a " +
+//            "JOIN a.prezzi p " +
+//            "JOIN p.venditore r " +
+//            "ORDER BY a.id DESC")
+//    List<AutopartDTO> findAllWithPriceAndReseller();
 
 
 }

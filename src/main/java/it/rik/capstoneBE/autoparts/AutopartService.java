@@ -11,7 +11,7 @@ public class AutopartService {
     @Autowired
     private AutopartRepository autopartRepository;
 
-    public List<AutopartDTO> getAllAutoparts() {
-        return autopartRepository.findAllWithPriceAndReseller();
-    }
+//    public List<AutopartDTO> getAllAutoparts() {
+//        return autopartRepository.findAllWithPriceAndReseller();
+//    }
 }

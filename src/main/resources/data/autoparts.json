@@ -1,12 +1,182 @@
 [
-  { "nome": "Filtro Olio", "codiceOe": "12345ABC", "categoria": "Filtri", "veicoliCompatibili": [1, 2, 3, 4] },
-  { "nome": "Pasticche Freni", "codiceOe": "67890XYZ", "categoria": "Freni", "veicoliCompatibili": [5, 6, 7, 8] },
-  { "nome": "Dischi Freni", "codiceOe": "11223QWE", "categoria": "Freni", "veicoliCompatibili": [9, 10, 11, 12] },
-  { "nome": "Batteria Auto 60Ah", "codiceOe": "33445RTY", "categoria": "Elettrico", "veicoliCompatibili": [13, 14, 15, 16] },
-  { "nome": "Filtro Aria", "codiceOe": "55678UOP", "categoria": "Filtri", "veicoliCompatibili": [17, 18, 19, 20] },
-  { "nome": "Ammortizzatori Posteriori", "codiceOe": "66789IOP", "categoria": "Sospensioni", "veicoliCompatibili": [21, 22, 23] },
-  { "nome": "Candela di Accensione", "codiceOe": "99012ASD", "categoria": "Motore", "veicoliCompatibili": [24, 25, 26] },
-  { "nome": "Kit Catena Distribuzione", "codiceOe": "22334FGH", "categoria": "Trasmissione", "veicoliCompatibili": [27, 28, 29] },
-  { "nome": "Termostato Motore", "codiceOe": "44556JKL", "categoria": "Raffreddamento", "veicoliCompatibili": [30, 31, 32] },
-  { "nome": "Sensore ABS", "codiceOe": "77889MNB", "categoria": "Elettronica", "veicoliCompatibili": [33, 34, 35] }
+  {
+    "nome": "Filtro Olio",
+    "codiceOe": "12345ABC",
+    "categoria": "Filtri",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      1,
+      2,
+      3,
+      4
+    ]
+  },
+  {
+    "nome": "Pasticche Freni",
+    "codiceOe": "67890XYZ",
+    "categoria": "Freni",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  {
+    "nome": "Dischi Freni",
+    "codiceOe": "11223QWE",
+    "categoria": "Freni",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "nome": "Batteria Auto 60Ah",
+    "codiceOe": "33445RTY",
+    "categoria": "Elettrico",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      13,
+      14,
+      15,
+      16
+    ]
+  },
+  {
+    "nome": "Filtro Aria",
+    "codiceOe": "55678UOP",
+    "categoria": "Filtri",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  {
+    "nome": "Ammortizzatori Posteriori",
+    "codiceOe": "66789IOP",
+    "categoria": "Sospensioni",
+    "condizione":  "USATO",
+    "veicoliCompatibili": [
+      21,
+      22,
+      23
+    ]
+  },
+  {
+    "nome": "Candela di Accensione",
+    "codiceOe": "99012ASD",
+    "categoria": "Motore",
+    "condizione": "NUOVO",
+    "veicoliCompatibili": [
+      24,
+      25,
+      26
+    ]
+  },
+  {
+    "nome": "Kit Catena Distribuzione",
+    "codiceOe": "22334FGH",
+    "categoria": "Trasmissione",
+    "condizione": "NUOVO",
+    "veicoliCompatibili": [
+      27,
+      28,
+      29
+    ]
+  },
+  {
+    "nome": "Termostato Motore",
+    "codiceOe": "44556JKL",
+    "categoria": "Raffreddamento",
+    "condizione":  "USATO",
+    "veicoliCompatibili": [
+      30,
+      31,
+      32
+    ]
+  },
+  {
+    "nome": "Sensore ABS",
+    "codiceOe": "77889MNB",
+    "categoria": "Elettronica",
+    "condizione":  "NUOVO",
+    "veicoliCompatibili": [
+      33,
+      34,
+      35
+    ]
+  },
+  {
+    "nome": "Specchietto Laterale DX",
+    "codiceOe": "SPC-2023DX",
+    "categoria": "Carrozzeria",
+    "condizione":  "USATO",
+    "veicoliCompatibili": [
+      4,
+      10,
+      15,
+      23,
+      37
+    ]
+  },
+  {
+    "nome": "Alternatore 140A",
+    "codiceOe": "ALT-140A-V2",
+    "categoria": "Elettrico",
+    "condizione":  "RICONDIZIONATO",
+    "veicoliCompatibili": [
+      2,
+      5,
+      7,
+      19,
+      28
+    ]
+  },
+  {
+    "nome": "Fanale Anteriore LED",
+    "codiceOe": "LED-FRONT-01",
+    "categoria": "Illuminazione",
+    "condizione": "USATO",
+    "veicoliCompatibili": [
+      3,
+      12,
+      20,
+      33,
+      40
+    ]
+  },
+  {
+    "nome": "Pompa Acqua",
+    "codiceOe": "H2O-PUMP-2023",
+    "categoria": "Raffreddamento",
+    "condizione": "USATO",
+    "veicoliCompatibili": [
+      1,
+      6,
+      9,
+      14,
+      27
+    ]
+  },
+  {
+    "nome": "Centralina Motore",
+    "codiceOe": "ECU-TURBO-X",
+    "categoria": "Elettronica",
+    "condizione": "USATO",
+    "veicoliCompatibili": [
+      7,
+      16,
+      22,
+      29,
+      34
+    ]
+  }
 ]
