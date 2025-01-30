@@ -8,5 +8,6 @@ public class ResellerDTO {
     private Long id;
     private String ragioneSociale;
     private String partitaIva;
+    private String sitoWeb;
     private UserDTO user;
 }

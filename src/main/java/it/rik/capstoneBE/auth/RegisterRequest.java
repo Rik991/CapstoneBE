@@ -13,5 +13,6 @@ public class RegisterRequest {
     // Campi specifici del rivenditore
     private String ragioneSociale;
     private String partitaIva;
+    private String sitoWeb;
 
 }

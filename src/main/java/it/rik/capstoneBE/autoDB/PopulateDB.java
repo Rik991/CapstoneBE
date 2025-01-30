@@ -80,6 +80,7 @@ public class PopulateDB {
                     resellerRequest.setSurname("Venditore" + i);
                     resellerRequest.setRagioneSociale("Reseller SRL" + i);
                     resellerRequest.setPartitaIva("12345678901" + i);
+                    resellerRequest.setSitoWeb("www.reseller" + i + ".it");
                     userService.registerReseller(resellerRequest, null);
                 }
             }

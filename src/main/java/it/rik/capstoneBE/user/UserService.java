@@ -81,6 +81,7 @@ public class UserService {
         Reseller reseller = new Reseller();
         reseller.setRagioneSociale(registerRequest.getRagioneSociale());
         reseller.setPartitaIva(registerRequest.getPartitaIva());
+        reseller.setSitoWeb(registerRequest.getSitoWeb());
         reseller.setUser(savedUser);
         resellerRepository.save(reseller);
 
