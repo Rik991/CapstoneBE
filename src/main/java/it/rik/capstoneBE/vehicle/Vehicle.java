@@ -42,5 +42,4 @@ public class Vehicle {
     @JsonIgnore
     private Set<Autopart> ricambi;
 
-
 }

@@ -53,7 +53,6 @@ public class PopulateDB {
 
     }
 
-
     private void loadResellers() {
         if (resellerRepository.count() == 0) {
             for (int i = 1; i <= 5; i++) {
