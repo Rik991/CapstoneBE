@@ -74,16 +74,20 @@ public class PopulateDB {
             System.out.println("Database popolato con 5 rivenditori di esempio.");
         }
     }
+
     private void loadVehicles() {
-        try (InputStream inputStream = getClass().getResourceAsStream("/data/vehicle.json")) {
-            List<Vehicle> vehicles = objectMapper.readValue(inputStream, new TypeReference<List<Vehicle>>() {});
-            for (Vehicle vehicle : vehicles) {
-                vehicleRepository.save(vehicle); // Salva il veicolo con i tipi di motore
+        if(vehicleRepository.count() == 0){
+            try (InputStream inputStream = getClass().getResourceAsStream("/data/vehicle.json")) {
+                List<Vehicle> vehicles = objectMapper.readValue(inputStream, new TypeReference<List<Vehicle>>() {});
+                for (Vehicle vehicle : vehicles) {
+                    vehicleRepository.save(vehicle); // Salva il veicolo con i tipi di motore
+                }
+                System.out.println("Vehicles loaded successfully.");
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            System.out.println("Vehicles loaded successfully.");
-        } catch (Exception e) {
-            e.printStackTrace();
         }
+
     }
 
 
