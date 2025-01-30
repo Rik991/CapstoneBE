@@ -11,7 +11,8 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
 
     Optional<Autopart> findByCodiceOe(String codiceOe);
 
-
+    @Query("SELECT DISTINCT a FROM Autopart a")
+    List<Autopart> findAllAutoparts();
 
 
 }

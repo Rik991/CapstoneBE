@@ -22,7 +22,5 @@ public class AutopartDTO {
         private String categoria;
         private Condizione condizione;
         private String immagine;
-        private Set<Vehicle> veicoliCompatibili;
-        private Set<Price> prezzi;
-        private Reseller venditore;
+
 }

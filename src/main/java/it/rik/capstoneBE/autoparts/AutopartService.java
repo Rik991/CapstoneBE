@@ -1,9 +1,11 @@
 // AutopartService.java
 package it.rik.capstoneBE.autoparts;
 
+import it.rik.capstoneBE.mapper.AutopartMapper;
 import it.rik.capstoneBE.price.Price;
 import it.rik.capstoneBE.price.PriceRepository;
 import it.rik.capstoneBE.user.reseller.Reseller;
+import it.rik.capstoneBE.user.reseller.ResellerInfoDTO;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import it.rik.capstoneBE.vehicle.Vehicle;
 import it.rik.capstoneBE.vehicle.VehicleRepository;
@@ -11,10 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional(readOnly = true)
 public class AutopartService {
 
     @Autowired
@@ -29,6 +35,22 @@ public class AutopartService {
     @Autowired
     private ResellerRepository resellerRepository;
 
+    @Autowired
+    private AutopartMapper autopartMapper;
+
+    public List<AutopartResponseDTO> getAllAutoparts() {
+        List<Autopart> autoparts = autopartRepository.findAllAutoparts();
+        List<Price> allPrices = priceRepository.findAllPricesWithResellers();
+
+        Map<Long, List<Price>> pricesByAutopartId = allPrices.stream()
+                .collect(Collectors.groupingBy(price -> price.getAutopart().getId()));
+
+        return autoparts.stream()
+                .map(autopart -> autopartMapper.toDTO(
+                        autopart,
+                        pricesByAutopartId.getOrDefault(autopart.getId(), new ArrayList<>())))
+                .collect(Collectors.toList());
+    }
 
 
     @Transactional
