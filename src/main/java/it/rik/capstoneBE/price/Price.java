@@ -26,5 +26,11 @@ public class Price {
     @JoinColumn(name = "venditore_id", nullable = false)
     private Reseller venditore;
 
+    @Transient
+    private Long autopartsId;
+
+    @Transient
+    private Long venditoreId;
+
 
 }

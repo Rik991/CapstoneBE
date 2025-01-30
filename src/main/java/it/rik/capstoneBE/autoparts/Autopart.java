@@ -40,6 +40,9 @@ public class Autopart {
     @JsonIgnore
     private Set<Vehicle> veicoliCompatibili;
 
+    @Transient
+    private Set<Long> veicoliCompatibiliIds;
+
 
     @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL)
     @JsonIgnore

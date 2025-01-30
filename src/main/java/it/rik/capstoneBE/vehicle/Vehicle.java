@@ -23,7 +23,7 @@ public class Vehicle {
     @Column(nullable = false)
     private String modello;
 
-    @ElementCollection(fetch = FetchType.EAGER) // Caricamento immediato
+    @ElementCollection(fetch = FetchType.LAZY) // Caricamento immediato
     @CollectionTable(
             name = "vehicle_engine_types",
             joinColumns = @JoinColumn(name = "vehicle_id")
@@ -39,7 +39,7 @@ public class Vehicle {
 
     private int fineProduzione;
 
-    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Autopart> ricambi;
 

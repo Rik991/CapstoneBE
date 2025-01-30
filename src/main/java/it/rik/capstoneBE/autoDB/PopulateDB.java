@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
 @Transactional
 public class PopulateDB {
 
-    //RICORDA DI CAMBIARE IL FATCHTYPE NELLE RELAZIONI DA LAZY A EAGER PER GENERARE CORRETTAMENTE IL DB
 
     @Autowired
     private UserService userService;
@@ -48,25 +47,13 @@ public class PopulateDB {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @PostConstruct
-    public void seedDatabase() {
-        loadVehicles();
+    public void init() {
         loadResellers();
+        loadVehicles();
         loadAutoparts();
         loadPrices();
     }
 
-    private void loadVehicles() {
-        if (vehicleRepository.count() == 0) {
-            try (InputStream inputStream = getClass().getResourceAsStream("/data/vehicle.json")) {
-                if (inputStream == null) throw new RuntimeException("File 'vehicle.json' non trovato");
-                List<Vehicle> vehicles = objectMapper.readValue(inputStream, new TypeReference<>() {});
-                vehicleRepository.saveAll(vehicles);
-                System.out.println("Database popolato con veicoli di esempio.");
-            } catch (Exception e) {
-                System.err.println("Errore durante il popolamento dei veicoli: " + e.getMessage());
-            }
-        }
-    }
 
     private void loadResellers() {
         if (resellerRepository.count() == 0) {
@@ -88,70 +75,57 @@ public class PopulateDB {
             System.out.println("Database popolato con 5 rivenditori di esempio.");
         }
     }
+    private void loadVehicles() {
+        try (InputStream inputStream = getClass().getResourceAsStream("/data/vehicle.json")) {
+            List<Vehicle> vehicles = objectMapper.readValue(inputStream, new TypeReference<List<Vehicle>>() {});
+            vehicleRepository.saveAll(vehicles);
+            System.out.println("Vehicles loaded successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private void loadAutoparts() {
-        if (autopartRepository.count() == 0) {
-            try (InputStream inputStream = getClass().getResourceAsStream("/data/autoparts.json")) {
-                if (inputStream == null) throw new RuntimeException("File 'autoparts.json' non trovato");
-
-                List<Map<String, Object>> rawParts = objectMapper.readValue(inputStream, new TypeReference<>() {});
-                List<Autopart> autopartList = new ArrayList<>();
-
-                for (Map<String, Object> rawPart : rawParts) {
-                    Autopart autopart = new Autopart();
-                    autopart.setNome((String) rawPart.get("nome"));
-                    autopart.setCodiceOe((String) rawPart.get("codiceOe"));
-                    autopart.setCategoria((String) rawPart.get("categoria"));
-                    autopart.setCondizione(Condizione.valueOf((String) rawPart.get("condizione")));
-
-                    List<Integer> vehicleIds = (List<Integer>) rawPart.get("veicoliCompatibili");
-                    List<Long> vehicleIdsLong = vehicleIds.stream().map(Integer::longValue).collect(Collectors.toList());
-                    Set<Vehicle> vehicles = new HashSet<>(vehicleRepository.findAllById(vehicleIdsLong));
-
-
-                    autopart.setVeicoliCompatibili(vehicles);
-
-                    autopartList.add(autopart);
+        try (InputStream inputStream = getClass().getResourceAsStream("/data/autoparts.json")) {
+            List<Autopart> autoparts = objectMapper.readValue(inputStream, new TypeReference<List<Autopart>>() {});
+            for (Autopart autopart : autoparts) {
+                Optional<Autopart> existingAutopart = autopartRepository.findByCodiceOe(autopart.getCodiceOe());
+                if (existingAutopart.isPresent()) {
+                    System.out.println("Autopart with codice_oe " + autopart.getCodiceOe() + " already exists. Skipping insertion.");
+                    continue;
                 }
-
-                autopartRepository.saveAll(autopartList);
-                System.out.println("Database popolato con ricambi di esempio.");
-            } catch (Exception e) {
-                System.err.println("Errore durante il popolamento dei ricambi: " + e.getMessage());
+                Set<Long> vehicleIds = Optional.ofNullable(autopart.getVeicoliCompatibiliIds()).orElse(Collections.emptySet());
+                Set<Vehicle> compatibleVehicles = vehicleIds.stream()
+                        .map(vehicleId -> vehicleRepository.findById(vehicleId).orElse(null))
+                        .collect(Collectors.toSet());
+                autopart.setVeicoliCompatibili(compatibleVehicles);
+                autopartRepository.save(autopart);
             }
+            System.out.println("Autoparts loaded successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     private void loadPrices() {
-        if (priceRepository.count() == 0) {
-            try (InputStream inputStream = getClass().getResourceAsStream("/data/prices.json")) {
-                if (inputStream == null) throw new RuntimeException("File 'prices.json' non trovato");
-
-                List<Map<String, Object>> rawPrices = objectMapper.readValue(inputStream, new TypeReference<>() {});
-                List<Price> pricesList = new ArrayList<>();
-
-                for (Map<String, Object> rawPrice : rawPrices) {
-                    Price price = new Price();
-                    price.setPrezzo((Double) rawPrice.get("prezzo"));
-
-                    int autopartsId = (Integer) rawPrice.get("autopartsId");
-                    int venditoreId = (Integer) rawPrice.get("venditoreId");
-
-                    Autopart autopart = autopartRepository.findById((long) autopartsId)
-                            .orElseThrow(() -> new RuntimeException("Autoparts ID " + autopartsId + " non trovato"));
-                    Reseller reseller = resellerRepository.findById((long) venditoreId)
-                            .orElseThrow(() -> new RuntimeException("Venditore ID " + venditoreId + " non trovato"));
-
-                    price.setAutopart(autopart);
-                    price.setVenditore(reseller);
-                    pricesList.add(price);
+        try (InputStream inputStream = getClass().getResourceAsStream("/data/prices.json")) {
+            List<Price> prices = objectMapper.readValue(inputStream, new TypeReference<List<Price>>() {});
+            for (Price price : prices) {
+                Optional<Autopart> autopart = autopartRepository.findById(price.getAutopartsId());
+                Optional<Reseller> reseller = resellerRepository.findById(price.getVenditoreId());
+                if (autopart.isPresent() && reseller.isPresent()) {
+                    price.setAutopart(autopart.get());
+                    price.setVenditore(reseller.get());
+                    priceRepository.save(price);
+                } else {
+                    System.out.println("Autopart or Reseller not found for price with id " + price.getId());
                 }
-
-                priceRepository.saveAll(pricesList);
-                System.out.println("Database popolato con prezzi di esempio.");
-            } catch (Exception e) {
-                System.err.println("Errore durante il popolamento dei prezzi: " + e.getMessage());
             }
+            System.out.println("Prices loaded successfully.");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
+
 }

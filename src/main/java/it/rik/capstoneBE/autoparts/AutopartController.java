@@ -20,4 +20,10 @@ public class AutopartController {
 //    public ResponseEntity<List<AutopartDTO>> getAllAutoparts() {
 //        return ResponseEntity.ok(autopartService.getAllAutoparts());
 //    }
+
+    @GetMapping
+    public ResponseEntity<List<Autopart>> getAllAutoparts() {
+        return ResponseEntity.ok(autopartService.getAllAutoparts());
+    }
+
 }

@@ -14,4 +14,9 @@ public class AutopartService {
 //    public List<AutopartDTO> getAllAutoparts() {
 //        return autopartRepository.findAllWithPriceAndReseller();
 //    }
+
+    public List<Autopart> getAllAutoparts() {
+        return autopartRepository.findAll();
+    }
+
 }
