@@ -16,6 +16,7 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
 
     // AutopartRepository.java
     Page<Autopart> findByResellerId(Long resellerId, Pageable pageable);
+
     @EntityGraph(attributePaths = {"veicoliCompatibili", "prezzi", "reseller"})
     Page<Autopart> findAll(Pageable pageable);
 
@@ -26,12 +27,11 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
     Page<Autopart> findByVeicoliCompatibiliId(Long vehicleId, Pageable pageable);
     Page<Autopart> findByPrezziImportoBetween(Double minPrice, Double maxPrice, Pageable pageable);
 
-//    @Query("SELECT a FROM Autopart a JOIN a.veicoliCompatibili v WHERE v.id = :vehicleId")
-//    Page<Autopart> findByVehicle(@Param("vehicleId") Long vehicleId, Pageable pageable);
-//
-//    @Query("SELECT a FROM Autopart a WHERE a.prezzi IN (SELECT p FROM Prezzo p WHERE p.importo BETWEEN :min AND :max)")
-//    Page<Autopart> findByPriceRange(@Param("min") Double min, @Param("max") Double max, Pageable pageable);
+    @Query("SELECT a FROM Autopart a JOIN a.veicoliCompatibili v WHERE v.id = :vehicleId")
+    Page<Autopart> findByVehicle(@Param("vehicleId") Long vehicleId, Pageable pageable);
 
+    @Query("SELECT a FROM Autopart a JOIN a.prezzi p WHERE (:codiceOe IS NULL OR a.codiceOe = :codiceOe) AND (:minPrice IS NULL OR p.importo >= :minPrice) AND (:maxPrice IS NULL OR p.importo <= :maxPrice)")
+    Page<Autopart> searchAutoparts(@Param("codiceOe") String codiceOe, @Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice, Pageable pageable);
 
 }
 

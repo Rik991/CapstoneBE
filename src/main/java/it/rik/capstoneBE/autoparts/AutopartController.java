@@ -22,6 +22,7 @@ import java.util.List;
 public class AutopartController {
 
     private final AutopartService autopartService;
+    private final AutopartRepository autopartRepository;
 
     @GetMapping
     public ResponseEntity<Page<AutopartDTO.Response>> getAll(
@@ -58,6 +59,15 @@ public class AutopartController {
             Pageable pageable
     ) {
         return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(resellerId, pageable));
+    }
+
+    @GetMapping("/search")
+    public Page<Autopart> searchAutoparts(
+            @RequestParam(required = false) String codiceOe,
+            @RequestParam(required = false) Double minPrice,
+            @RequestParam(required = false) Double maxPrice,
+            Pageable pageable) {
+        return autopartRepository.searchAutoparts(codiceOe, minPrice, maxPrice, pageable);
     }
 
 }
