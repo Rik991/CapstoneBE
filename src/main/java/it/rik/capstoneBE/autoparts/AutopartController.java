@@ -52,4 +52,12 @@ public class AutopartController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(autopartService.createAutopart(request, username));
     }
+    @GetMapping("/reseller/{resellerId}")
+    public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
+            @PathVariable Long resellerId,
+            Pageable pageable
+    ) {
+        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(resellerId, pageable));
+    }
+
 }

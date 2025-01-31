@@ -77,7 +77,6 @@ public class AutopartService {
     }
 
 
-
     public Page<AutopartDTO.Response> findByVehicle(Long vehicleId, Pageable pageable) {
         return autopartRepository.findByVeicoliCompatibiliId(vehicleId, pageable)
                 .map(mapper::mapToResponse);
@@ -85,6 +84,11 @@ public class AutopartService {
 
     public Page<AutopartDTO.Response> findByPriceRange(Double minPrice, Double maxPrice, Pageable pageable) {
         return autopartRepository.findByPrezziImportoBetween(minPrice, maxPrice, pageable)
+                .map(mapper::mapToResponse);
+    }
+    // AutopartService.java
+    public Page<AutopartDTO.Response> getAllAutopartsByResellerId(Long resellerId, Pageable pageable) {
+        return autopartRepository.findByResellerId(resellerId, pageable)
                 .map(mapper::mapToResponse);
     }
 }

@@ -6,8 +6,8 @@ import java.util.Optional;
 
 public interface ResellerRepository extends JpaRepository<Reseller, Long> {
 
-    //findbyusername
-
     Optional<Reseller> findByUserUsername(String username);
+
+
 
 }

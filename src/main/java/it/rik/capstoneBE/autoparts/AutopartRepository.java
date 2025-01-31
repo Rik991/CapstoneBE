@@ -14,7 +14,8 @@ import java.util.Optional;
 
 public interface AutopartRepository extends JpaRepository<Autopart, Long> {
 
-
+    // AutopartRepository.java
+    Page<Autopart> findByResellerId(Long resellerId, Pageable pageable);
     @EntityGraph(attributePaths = {"veicoliCompatibili", "prezzi", "reseller"})
     Page<Autopart> findAll(Pageable pageable);
 
