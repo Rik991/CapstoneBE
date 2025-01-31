@@ -38,8 +38,5 @@ public class Vehicle {
 
     private int fineProduzione;
 
-    @ManyToMany(mappedBy = "veicoliCompatibili", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private Set<Autopart> ricambi;
 
 }

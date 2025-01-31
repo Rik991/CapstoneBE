@@ -3,14 +3,9 @@ package it.rik.capstoneBE.autoDB;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import it.rik.capstoneBE.auth.RegisterRequest;
-import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.autoparts.AutopartRepository;
-import it.rik.capstoneBE.autoparts.Condizione;
-import it.rik.capstoneBE.price.Price;
-import it.rik.capstoneBE.price.PriceRepository;
 import it.rik.capstoneBE.user.User;
 import it.rik.capstoneBE.user.UserService;
-import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import it.rik.capstoneBE.vehicle.Vehicle;
 import it.rik.capstoneBE.vehicle.VehicleRepository;
@@ -21,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 @Transactional
@@ -40,8 +34,7 @@ public class PopulateDB {
     @Autowired
     private AutopartRepository autopartRepository;
 
-    @Autowired
-    private PriceRepository priceRepository;
+
 
     @Autowired
     private ObjectMapper objectMapper = new ObjectMapper();

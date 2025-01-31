@@ -1,112 +1,90 @@
 // AutopartService.java
 package it.rik.capstoneBE.autoparts;
 
-import it.rik.capstoneBE.mapper.AutopartMapper;
-import it.rik.capstoneBE.price.Price;
-import it.rik.capstoneBE.price.PriceRepository;
+import it.rik.capstoneBE.mapper.Mapper;
+import it.rik.capstoneBE.price.Prezzo;
+import it.rik.capstoneBE.price.PrezzoInfo;
+import it.rik.capstoneBE.rating.RatingRepository;
 import it.rik.capstoneBE.user.reseller.Reseller;
-import it.rik.capstoneBE.user.reseller.ResellerInfoDTO;
+import it.rik.capstoneBE.user.reseller.ResellerInfo;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import it.rik.capstoneBE.vehicle.Vehicle;
+import it.rik.capstoneBE.vehicle.VehicleInfo;
 import it.rik.capstoneBE.vehicle.VehicleRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.*;
 
 @Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
 public class AutopartService {
 
-    @Autowired
-    private AutopartRepository autopartRepository;
+    private final AutopartRepository autopartRepository;
+    private final VehicleRepository vehicleRepository;
+    private final ResellerRepository resellerRepository;
+    private final Mapper mapper;
 
-    @Autowired
-    private VehicleRepository vehicleRepository;
-
-    @Autowired
-    private PriceRepository priceRepository;
-
-    @Autowired
-    private ResellerRepository resellerRepository;
-
-    @Autowired
-    private AutopartMapper autopartMapper;
-
-    public List<AutopartResponseDTO> getAllAutoparts() {
-        List<Autopart> autoparts = autopartRepository.findAllAutoparts();
-        List<Price> allPrices = priceRepository.findAllPricesWithResellers();
-
-        Map<Long, List<Price>> pricesByAutopartId = allPrices.stream()
-                .collect(Collectors.groupingBy(price -> price.getAutopart().getId()));
-
-        return autoparts.stream()
-                .map(autopart -> autopartMapper.toDTO(
-                        autopart,
-                        pricesByAutopartId.getOrDefault(autopart.getId(), new ArrayList<>())))
-                .collect(Collectors.toList());
+    public Page<AutopartDTO.Response> getAllAutoparts(Pageable pageable) {
+        return autopartRepository.findAll(pageable)
+                .map(mapper::mapToResponse);
     }
 
-    public AutopartResponseDTO getAutopartById(Long id) {
-        Autopart autopart = autopartRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Autopart non trovato con ID: " + id));
-        List<Price> prices = priceRepository.findAllPricesByAutopartId(id);
-        return autopartMapper.toDTO(autopart, prices);
+    public AutopartDTO.Response getAutopartById(Long id) {
+        return autopartRepository.findByIdWithDetails(id)
+                .map(mapper::mapToResponse)
+                .orElseThrow(() -> new EntityNotFoundException("Autopart non trovata"));
     }
-
-
-
 
     @Transactional
-    public Autopart createAutopartWithPrice(AutopartPriceRequestDTO request) {
-        // Trova il venditore
-        Reseller venditore = resellerRepository.findById(request.getVenditoreId())
-                .orElseThrow(() -> new IllegalArgumentException("Venditore non trovato"));
-        // Trova i veicoli compatibili
-        Set<Vehicle> veicoliCompatibili = request.getVeicoliCompatibiliIds().stream()
-                .map(vehicleId -> vehicleRepository.findById(vehicleId)
-                        .orElseThrow(() -> new IllegalArgumentException("Veicolo non trovato con ID: " + vehicleId)))
-                .collect(Collectors.toSet());
+    public AutopartDTO.Response createAutopart(AutopartDTO.Request request, String username) {
+        Reseller reseller = null;
+        if (username != null) {
+            reseller = resellerRepository.findByUserUsername(username)
+                    .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
+        }
 
-
-        // Crea l'Autopart
         Autopart autopart = new Autopart();
+        autopart.setReseller(reseller);
         autopart.setNome(request.getNome());
         autopart.setCodiceOe(request.getCodiceOe());
         autopart.setDescrizione(request.getDescrizione());
         autopart.setCategoria(request.getCategoria());
         autopart.setCondizione(request.getCondizione());
         autopart.setImmagine(request.getImmagine());
-        autopart.setVeicoliCompatibili(veicoliCompatibili);
-        autopartRepository.save(autopart);
 
-        // Crea il Price
-        Price price = new Price();
-        price.setPrezzo(request.getPrezzo());
-        price.setAutopart(autopart);
-        price.setVenditore(venditore);
-        priceRepository.save(price);
+        if (reseller != null) {
+            autopart.setReseller(reseller);
+        }
 
-        return autopart;
+        Set<Vehicle> vehicles = new HashSet<>(vehicleRepository.findAllById(request.getVeicoliIds()));
+        autopart.setVeicoliCompatibili(vehicles);
+
+        Prezzo prezzo = new Prezzo();
+        prezzo.setImporto(request.getPrezzo());
+        prezzo.setAutopart(autopart);
+        if (reseller != null) {
+            prezzo.setReseller(reseller);
+        }
+        autopart.getPrezzi().add(prezzo);
+
+        return mapper.mapToResponse(autopartRepository.save(autopart));
     }
 
-    //recupero i ricambi per un determinato venditore
-    public List<AutopartResponseDTO> getAutopartsByResellerId(Long resellerId) {
-        List<Price> prices = priceRepository.findAllPricesByResellerId(resellerId);
-        Map<Long, List<Price>> pricesByAutopartId = prices.stream()
-                .collect(Collectors.groupingBy(price -> price.getAutopart().getId()));
 
-        return pricesByAutopartId.entrySet().stream()
-                .map(entry -> {
-                    Autopart autopart = entry.getValue().get(0).getAutopart();
-                    List<Price> autopartPrices = entry.getValue();
-                    return autopartMapper.toDTO(autopart, autopartPrices);
-                })
-                .collect(Collectors.toList());
+
+    public Page<AutopartDTO.Response> findByVehicle(Long vehicleId, Pageable pageable) {
+        return autopartRepository.findByVeicoliCompatibiliId(vehicleId, pageable)
+                .map(mapper::mapToResponse);
+    }
+
+    public Page<AutopartDTO.Response> findByPriceRange(Double minPrice, Double maxPrice, Pageable pageable) {
+        return autopartRepository.findByPrezziImportoBetween(minPrice, maxPrice, pageable)
+                .map(mapper::mapToResponse);
     }
 }

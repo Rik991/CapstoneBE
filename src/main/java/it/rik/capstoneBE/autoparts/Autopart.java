@@ -1,16 +1,19 @@
 package it.rik.capstoneBE.autoparts;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import it.rik.capstoneBE.price.Price;
+import it.rik.capstoneBE.price.Prezzo;
+import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.vehicle.Vehicle;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-@Data
 @Entity
 @Table(name = "autoparts")
+@Data
 public class Autopart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +26,6 @@ public class Autopart {
     private String codiceOe;
 
     private String descrizione;
-
     private String categoria;
 
     @Enumerated(EnumType.STRING)
@@ -33,15 +35,16 @@ public class Autopart {
 
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
-            name = "vehicle_parts",
-            joinColumns = @JoinColumn(name = "ricambio_id"),
-            inverseJoinColumns = @JoinColumn(name = "veicolo_id")
+            name = "autopart_vehicle",
+            joinColumns = @JoinColumn(name = "autopart_id"),
+            inverseJoinColumns = @JoinColumn(name = "vehicle_id")
     )
-    @JsonIgnore
-    private Set<Vehicle> veicoliCompatibili;
+    private Set<Vehicle> veicoliCompatibili = new HashSet<>();
 
+    @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Prezzo> prezzi = new ArrayList<>();
 
-    @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL, fetch =  FetchType.LAZY)
-    @JsonIgnore
-    private Set<Price> prezzi;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "reseller_id")
+    private Reseller reseller;
 }
