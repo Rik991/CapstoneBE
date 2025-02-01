@@ -1,13 +1,20 @@
 // AutopartController.java
 package it.rik.capstoneBE.autoparts;
 
+import it.rik.capstoneBE.filestorage.FileStorageService;
 import it.rik.capstoneBE.user.User;
+import it.rik.capstoneBE.user.reseller.Reseller;
+import it.rik.capstoneBE.user.reseller.ResellerRepository;
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -22,7 +29,8 @@ import java.util.List;
 public class AutopartController {
 
     private final AutopartService autopartService;
-    private final AutopartRepository autopartRepository;
+    private final ResellerRepository resellerRepository;
+    private final FileStorageService fileStorageService;
 
     @GetMapping
     public ResponseEntity<Page<AutopartDTO.Response>> getAll(
@@ -43,31 +51,50 @@ public class AutopartController {
         return ResponseEntity.ok(autopartService.getAllAutoparts(pageable));
     }
 
-    @PostMapping
-    @PreAuthorize("hasRole('RESELLER')")
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<AutopartDTO.Response> createAutopart(
-            @Valid @RequestBody AutopartDTO.Request request,
-            @AuthenticationPrincipal UserDetails userDetails
-    ) {
-        String username = userDetails.getUsername();
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(autopartService.createAutopart(request, username));
-    }
-    @GetMapping("/reseller/{resellerId}")
-    public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
-            @PathVariable Long resellerId,
-            Pageable pageable
-    ) {
-        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(resellerId, pageable));
+            @ModelAttribute AutopartDTO.Request request,
+            @AuthenticationPrincipal UserDetails userDetails) {
+        return ResponseEntity.ok(autopartService.createAutopart(request, userDetails.getUsername()));
     }
 
     @GetMapping("/search")
-    public Page<Autopart> searchAutoparts(
+    public ResponseEntity<Page<AutopartDTO.Response>> searchAutoparts(
             @RequestParam(required = false) String codiceOe,
-            @RequestParam(required = false) Double minPrice,
-            @RequestParam(required = false) Double maxPrice,
-            Pageable pageable) {
-        return autopartRepository.searchAutoparts(codiceOe, minPrice, maxPrice, pageable);
+            @RequestParam(required = false) String categoria,
+            @RequestParam(required = false) String marca,
+            @RequestParam(required = false) String modello,
+            @RequestParam(required = false) Double minPrezzo,
+            @RequestParam(required = false) Double maxPrezzo,
+            @RequestParam(required = false) String condizione, // come String
+            @RequestParam(required = false) String search,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "12") int size,
+            @RequestParam(defaultValue = "nome") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir) {
+
+        // Converte la stringa in enum, se valorizzata e non vuota
+        Condizione condizioneEnum = (condizione == null || condizione.trim().isEmpty())
+                ? null
+                : Condizione.valueOf(condizione.toUpperCase());
+
+        Sort.Direction direction = Sort.Direction.fromString(sortDir);
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
+
+        return ResponseEntity.ok(autopartService.searchAutoparts(
+                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizioneEnum, search, pageable));
+    }
+
+
+    @GetMapping("/reseller")
+    @PreAuthorize("hasRole('RESELLER')")
+    public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
+            @AuthenticationPrincipal UserDetails userDetails,
+            Pageable pageable
+    ) {
+        Reseller reseller = resellerRepository.findByUserUsername(userDetails.getUsername())
+                .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
+        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(reseller.getId(), pageable));
     }
 
 }

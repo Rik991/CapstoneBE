@@ -17,7 +17,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.*;
 
 @Service
@@ -56,7 +62,20 @@ public class AutopartService {
         autopart.setDescrizione(request.getDescrizione());
         autopart.setCategoria(request.getCategoria());
         autopart.setCondizione(request.getCondizione());
-        autopart.setImmagine(request.getImmagine());
+
+        // Gestione del MultipartFile
+        MultipartFile immagine = request.getImmagine();
+        if (immagine != null && !immagine.isEmpty()) {
+            try {
+                String fileName = immagine.getOriginalFilename();
+                Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
+                Path targetLocation = fileStorageLocation.resolve(fileName);
+                Files.copy(immagine.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+                autopart.setImmagine(fileName);
+            } catch (IOException ex) {
+                throw new RuntimeException("Errore durante il salvataggio del file", ex);
+            }
+        }
 
         if (reseller != null) {
             autopart.setReseller(reseller);
@@ -90,5 +109,20 @@ public class AutopartService {
     public Page<AutopartDTO.Response> getAllAutopartsByResellerId(Long resellerId, Pageable pageable) {
         return autopartRepository.findByResellerId(resellerId, pageable)
                 .map(mapper::mapToResponse);
+    }
+    public Page<AutopartDTO.Response> searchAutoparts(
+            String codiceOe,
+            String categoria,
+            String marca,
+            String modello,
+            Double minPrezzo,
+            Double maxPrezzo,
+            Condizione condizione,
+            String search,
+            Pageable pageable) {
+        Page<Autopart> autopartsPage = autopartRepository.search(
+                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizione, search, pageable
+        );
+        return autopartsPage.map(autopart -> mapper.mapToResponse(autopart));
     }
 }
