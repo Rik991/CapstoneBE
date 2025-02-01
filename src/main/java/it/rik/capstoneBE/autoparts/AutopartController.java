@@ -6,14 +6,11 @@ import it.rik.capstoneBE.user.User;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import jakarta.persistence.EntityNotFoundException;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -58,6 +55,41 @@ public class AutopartController {
         return ResponseEntity.ok(autopartService.createAutopart(request, userDetails.getUsername()));
     }
 
+
+    @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PreAuthorize("hasRole('RESELLER')")
+    public ResponseEntity<AutopartDTO.Response> updateAutopart(
+            @PathVariable Long id, @ModelAttribute AutopartDTO.Request request, @AuthenticationPrincipal UserDetails userDetails) {
+
+        return ResponseEntity.ok(autopartService.updateAutopart(id, request, userDetails.getUsername()));
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @PreAuthorize("hasRole('RESELLER')")
+    public ResponseEntity<Void> deleteAutopart(@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
+        autopartService.deleteAutopart(id, userDetails.getUsername());
+        return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping(value = "/{id}")
+    @PreAuthorize("hasRole('RESELLER')")
+    public ResponseEntity<AutopartDTO.Response> getById (@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
+        return ResponseEntity.ok(autopartService.getAutopartById(id, userDetails.getUsername()));
+    }
+
+
+    @GetMapping("/reseller")
+    @PreAuthorize("hasRole('RESELLER')")
+    public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
+            @AuthenticationPrincipal UserDetails userDetails,
+            Pageable pageable
+    ) {
+        Reseller reseller = resellerRepository.findByUserUsername(userDetails.getUsername())
+                .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
+        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(reseller.getId(), pageable));
+    }
+
+    //ebdpoint per filtri di ricerca
     @GetMapping("/search")
     public ResponseEntity<Page<AutopartDTO.Response>> searchAutoparts(
             @RequestParam(required = false) String codiceOe,
@@ -68,6 +100,7 @@ public class AutopartController {
             @RequestParam(required = false) Double maxPrezzo,
             @RequestParam(required = false) String condizione, // come String
             @RequestParam(required = false) String search,
+            @RequestParam(required = false) String searchWord,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "12") int size,
             @RequestParam(defaultValue = "nome") String sortBy,
@@ -82,19 +115,8 @@ public class AutopartController {
         Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
 
         return ResponseEntity.ok(autopartService.searchAutoparts(
-                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizioneEnum, search, pageable));
+                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizioneEnum, search, searchWord, pageable));
     }
 
-
-    @GetMapping("/reseller")
-    @PreAuthorize("hasRole('RESELLER')")
-    public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
-            @AuthenticationPrincipal UserDetails userDetails,
-            Pageable pageable
-    ) {
-        Reseller reseller = resellerRepository.findByUserUsername(userDetails.getUsername())
-                .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
-        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(reseller.getId(), pageable));
-    }
 
 }

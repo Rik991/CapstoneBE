@@ -110,13 +110,17 @@
 			<artifactId>commons-io</artifactId>
 			<version>2.14.0</version>
 		</dependency>
-
-
 		<!-- Per la manipolazione delle immagini (opzionale) -->
 		<dependency>
 			<groupId>org.imgscalr</groupId>
 			<artifactId>imgscalr-lib</artifactId>
 			<version>4.2</version>
+		</dependency>
+      <!--upoload foto su cloud amazon -->
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-s3</artifactId>
+			<version>1.12.765</version>
 		</dependency>
 	</dependencies>
 

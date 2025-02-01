@@ -27,11 +27,8 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
     Page<Autopart> findByVeicoliCompatibiliId(Long vehicleId, Pageable pageable);
     Page<Autopart> findByPrezziImportoBetween(Double minPrice, Double maxPrice, Pageable pageable);
 
-    @Query("SELECT a FROM Autopart a JOIN a.veicoliCompatibili v WHERE v.id = :vehicleId")
-    Page<Autopart> findByVehicle(@Param("vehicleId") Long vehicleId, Pageable pageable);
 
-//    @Query("SELECT a FROM Autopart a JOIN a.prezzi p WHERE (:codiceOe IS NULL OR a.codiceOe = :codiceOe) AND (:minPrice IS NULL OR p.importo >= :minPrice) AND (:maxPrice IS NULL OR p.importo <= :maxPrice)")
-//    Page<Autopart> searchAutoparts(@Param("codiceOe") String codiceOe, @Param("minPrice") Double minPrice, @Param("maxPrice") Double maxPrice, Pageable pageable);
+
 
     @Query("SELECT DISTINCT a FROM Autopart a " +
             "LEFT JOIN a.veicoliCompatibili v " +
@@ -43,7 +40,11 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
             "  AND (:minPrezzo IS NULL OR p.importo >= :minPrezzo) " +
             "  AND (:maxPrezzo IS NULL OR p.importo <= :maxPrezzo) " +
             "  AND (:condizione IS NULL OR a.condizione = :condizione) " +
-            "  AND (:search IS NULL OR (LOWER(a.nome) LIKE %:search% OR LOWER(a.descrizione) LIKE %:search%))")
+            "  AND (:search IS NULL OR (" +
+            "    LOWER(a.nome) LIKE %:search% " +
+            "    OR LOWER(a.descrizione) LIKE %:search% " +
+            "    OR LOWER(a.descrizione) LIKE %:searchWords% " +
+            "  ))")
     Page<Autopart> search(
             @Param("codiceOe") String codiceOe,
             @Param("categoria") String categoria,
@@ -53,6 +54,7 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
             @Param("maxPrezzo") Double maxPrezzo,
             @Param("condizione") Condizione condizione,
             @Param("search") String search,
+            @Param("searchWords") String searchWords,
             Pageable pageable
     );
 

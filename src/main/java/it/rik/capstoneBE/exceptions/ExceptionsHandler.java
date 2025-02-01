@@ -34,10 +34,14 @@ public class ExceptionsHandler {
         return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(value = NotYourAutopart.class)
+    protected ResponseEntity<Object> elementNotFound(NotYourAutopart e) {
+        return new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.FORBIDDEN);
+    }
 
 
 
-    //TODO
+
     //da usare per la validazione, notation sugli attributi delle entities tipo @NotBlank,
     //e usare nel service notation @Validated e @Valid per ogni metodo che vuole validazione!
     @ExceptionHandler(ConstraintViolationException.class)

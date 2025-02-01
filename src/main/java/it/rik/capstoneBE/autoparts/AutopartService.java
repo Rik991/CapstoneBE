@@ -1,15 +1,12 @@
 // AutopartService.java
 package it.rik.capstoneBE.autoparts;
 
+import it.rik.capstoneBE.exceptions.NotYourAutopart;
 import it.rik.capstoneBE.mapper.Mapper;
 import it.rik.capstoneBE.price.Prezzo;
-import it.rik.capstoneBE.price.PrezzoInfo;
-import it.rik.capstoneBE.rating.RatingRepository;
 import it.rik.capstoneBE.user.reseller.Reseller;
-import it.rik.capstoneBE.user.reseller.ResellerInfo;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import it.rik.capstoneBE.vehicle.Vehicle;
-import it.rik.capstoneBE.vehicle.VehicleInfo;
 import it.rik.capstoneBE.vehicle.VehicleRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -41,10 +38,16 @@ public class AutopartService {
                 .map(mapper::mapToResponse);
     }
 
-    public AutopartDTO.Response getAutopartById(Long id) {
-        return autopartRepository.findByIdWithDetails(id)
-                .map(mapper::mapToResponse)
-                .orElseThrow(() -> new EntityNotFoundException("Autopart non trovata"));
+    public AutopartDTO.Response getAutopartById(Long id, String username) {
+        Autopart autopart = autopartRepository.findByIdWithDetails(id).orElseThrow(()-> new EntityNotFoundException("Ricambio non trovato"));
+
+        //controlliamo sempre che il reseller sia presente e che il ricambio sia il suo
+        Reseller reseller = resellerRepository.findByUserUsername(username).orElseThrow(()-> new EntityNotFoundException("Venditore non trovato"));
+        if (!autopart.getReseller().getId().equals(reseller.getId())){
+            throw new NotYourAutopart("Il ricambio selezionato non è tuo");
+        }
+
+        return mapper.mapToResponse(autopart);
     }
 
     @Transactional
@@ -95,6 +98,90 @@ public class AutopartService {
         return mapper.mapToResponse(autopartRepository.save(autopart));
     }
 
+    @Transactional
+    public AutopartDTO.Response updateAutopart(Long id, AutopartDTO.Request request, String username ){
+
+        Autopart autopart = autopartRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Ricambio non trovato"));
+
+        // Controlliamo per sicurezza se c'è il reseller e se è il proprietario di quel ricambio
+        Reseller reseller = resellerRepository.findByUserUsername(username)
+                .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
+        if (!autopart.getReseller().getId().equals(reseller.getId())) {
+            throw new SecurityException("Non sei autorizzato a modificare questa autopart");
+        }
+
+        //Aggiornamento dei campi
+        autopart.setNome(request.getNome());
+        autopart.setCodiceOe(request.getCodiceOe());
+        autopart.setDescrizione(request.getDescrizione());
+        autopart.setCategoria(request.getCategoria());
+        autopart.setCondizione(request.getCondizione());
+
+
+        // Gestione immagine (se presente)
+        if (request.getImmagine() != null && !request.getImmagine().isEmpty()) {
+            try {
+                String fileName = request.getImmagine().getOriginalFilename();
+                Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
+                Files.createDirectories(fileStorageLocation); // Crea la directory se non esiste
+                Path targetLocation = fileStorageLocation.resolve(fileName);
+
+                // Cancella l'immagine vecchia se esiste e se è diversa dalla nuova
+                if (autopart.getImmagine() != null && !autopart.getImmagine().equals(fileName)) {
+                    Path oldImagePath = fileStorageLocation.resolve(autopart.getImmagine());
+                    Files.deleteIfExists(oldImagePath);
+                }
+
+                Files.copy(request.getImmagine().getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
+                autopart.setImmagine(fileName);
+            } catch (IOException ex) {
+                throw new RuntimeException("Errore durante l'aggiornamento del file", ex);
+            }
+        }
+        //Aggiorniamo i veicoli compatibili
+        Set<Vehicle> veicoliAggiornati = new HashSet<>(vehicleRepository.findAllById(request.getVeicoliIds()));
+        autopart.setVeicoliCompatibili(veicoliAggiornati);
+
+        // Aggiorniamo il prezzo, così facendo però non avrò lo storico, in caso va creato un nuovo prezzo come nella create
+        Optional<Prezzo> ultimoPrezzo = autopart.getPrezzi().stream()
+                .max(Comparator.comparing(Prezzo::getDataInserimento));
+
+        if (ultimoPrezzo.isPresent()) {
+            ultimoPrezzo.get().setImporto(request.getPrezzo());
+        } else {
+            Prezzo prezzo = new Prezzo();
+            prezzo.setImporto(request.getPrezzo());
+            prezzo.setAutopart(autopart);
+            prezzo.setReseller(reseller);
+            autopart.getPrezzi().add(prezzo);
+        }
+
+        return mapper.mapToResponse(autopartRepository.save(autopart));
+
+    }
+
+    @Transactional
+    public void deleteAutopart (Long id, String username){
+        Autopart autopart = autopartRepository.findById(id).orElseThrow(()-> new EntityNotFoundException("Ricambio non trovato"));
+
+        //controlliamo sempre che il reseller sia presente e che il ricambio sia il suo
+        Reseller reseller = resellerRepository.findByUserUsername(username).orElseThrow(()-> new EntityNotFoundException("Venditore non trovato"));
+        if (!autopart.getReseller().getId().equals(reseller.getId())){
+            throw new SecurityException("Non sei autorizzato ad eliminare questo ricambio");
+        }
+
+        // Cancella l'immagine associata se esiste
+        if (autopart.getImmagine() != null) {
+            Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
+            Path imagePath = fileStorageLocation.resolve(autopart.getImmagine());
+            try {
+                Files.deleteIfExists(imagePath);
+            } catch (IOException ex) {
+                throw new RuntimeException("Errore durante la cancellazione del file", ex);
+            }}
+        autopartRepository.delete(autopart);
+    }
+
 
     public Page<AutopartDTO.Response> findByVehicle(Long vehicleId, Pageable pageable) {
         return autopartRepository.findByVeicoliCompatibiliId(vehicleId, pageable)
@@ -105,11 +192,13 @@ public class AutopartService {
         return autopartRepository.findByPrezziImportoBetween(minPrice, maxPrice, pageable)
                 .map(mapper::mapToResponse);
     }
-    // AutopartService.java
+
     public Page<AutopartDTO.Response> getAllAutopartsByResellerId(Long resellerId, Pageable pageable) {
         return autopartRepository.findByResellerId(resellerId, pageable)
                 .map(mapper::mapToResponse);
     }
+
+
     public Page<AutopartDTO.Response> searchAutoparts(
             String codiceOe,
             String categoria,
@@ -119,10 +208,16 @@ public class AutopartService {
             Double maxPrezzo,
             Condizione condizione,
             String search,
+            String searchWords,
             Pageable pageable) {
+        if (search != null && !search.isEmpty()) {
+            searchWords = "%" + search.replace(" ", "%") + "%";
+        }
         Page<Autopart> autopartsPage = autopartRepository.search(
-                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizione, search, pageable
+                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizione, search, searchWords, pageable
         );
         return autopartsPage.map(autopart -> mapper.mapToResponse(autopart));
     }
+
+
 }
