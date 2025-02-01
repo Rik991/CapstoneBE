@@ -1,73 +1,4194 @@
 [
-  { "marca": "Toyota", "modello": "Corolla", "tipiMotore": ["1.8 Hybrid", "1.6 Benzina", "2.0 Diesel"], "carrozzeria": "Berlina", "inizioProduzione": 2018, "fineProduzione": null },
-  { "marca": "Toyota", "modello": "Yaris", "tipiMotore": ["1.5 Hybrid", "1.0 Benzina"], "carrozzeria": "Hatchback", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Tesla", "modello": "Model 3", "tipiMotore": ["Elettrico"], "carrozzeria": "Berlina", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Tesla", "modello": "Model Y", "tipiMotore": ["Elettrico"], "carrozzeria": "SUV", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Volkswagen", "modello": "Golf", "tipiMotore": ["1.5 TSI", "2.0 GTI", "2.0 TDI"], "carrozzeria": "Hatchback", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Audi", "modello": "A6", "tipiMotore": ["2.0 Diesel", "3.0 Benzina"], "carrozzeria": "Berlina", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Ford", "modello": "Mustang", "tipiMotore": ["5.0 V8", "2.3 Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2015, "fineProduzione": null },
-  { "marca": "Alfa Romeo", "modello": "Giulia", "tipiMotore": ["2.0 Benzina", "2.2 Diesel", "Quadrifoglio 2.9 V6"], "carrozzeria": "Berlina", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Fiat", "modello": "Punto", "tipiMotore": ["1.2 Benzina", "1.3 Multijet Diesel"], "carrozzeria": "Hatchback", "inizioProduzione": 2012, "fineProduzione": 2018 },
-  { "marca": "Jeep", "modello": "Wrangler", "tipiMotore": ["2.0 Turbo", "3.6 V6"], "carrozzeria": "SUV", "inizioProduzione": 2018, "fineProduzione": null },
-  { "marca": "Volvo", "modello": "XC60", "tipiMotore": ["2.0 Diesel", "Plug-in Hybrid"], "carrozzeria": "SUV", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Honda", "modello": "Civic", "tipiMotore": ["1.0 Turbo", "1.5 Turbo", "2.0 Type R"], "carrozzeria": "Hatchback", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "BMW", "modello": "Serie 3", "tipiMotore": ["2.0 Diesel", "3.0 Benzina", "330e Plug-in Hybrid"], "carrozzeria": "Berlina", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Mercedes-Benz", "modello": "Classe C", "tipiMotore": ["1.5 Hybrid", "2.0 Diesel", "AMG 3.0 V6"], "carrozzeria": "Berlina", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Hyundai", "modello": "Tucson", "tipiMotore": ["1.6 Hybrid", "2.0 Diesel", "1.6 T-GDI"], "carrozzeria": "SUV", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Kia", "modello": "Sportage", "tipiMotore": ["1.6 T-GDI", "2.0 CRDi Diesel"], "carrozzeria": "SUV", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Mazda", "modello": "CX-5", "tipiMotore": ["2.5 Skyactiv-G", "2.2 Skyactiv-D Diesel"], "carrozzeria": "SUV", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Nissan", "modello": "Qashqai", "tipiMotore": ["1.3 DIG-T", "1.5 dCi Diesel"], "carrozzeria": "SUV", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Renault", "modello": "Clio", "tipiMotore": ["1.0 TCe", "1.5 Blue dCi"], "carrozzeria": "Hatchback", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Peugeot", "modello": "208", "tipiMotore": ["1.2 PureTech", "Electric"], "carrozzeria": "Hatchback", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Skoda", "modello": "Octavia", "tipiMotore": ["1.5 TSI", "2.0 TDI"], "carrozzeria": "Berlina", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Seat", "modello": "Leon", "tipiMotore": ["1.5 TSI", "2.0 TDI"], "carrozzeria": "Hatchback", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Porsche", "modello": "911", "tipiMotore": ["3.0 Turbo", "4.0 GT3"], "carrozzeria": "Coupé", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Suzuki", "modello": "Swift", "tipiMotore": ["1.2 Dualjet", "1.0 Boosterjet"], "carrozzeria": "Hatchback", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Subaru", "modello": "Outback", "tipiMotore": ["2.5 Boxer", "2.4 Turbo"], "carrozzeria": "Station Wagon", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Mitsubishi", "modello": "Outlander", "tipiMotore": ["2.4 MIVEC", "Plug-in Hybrid"], "carrozzeria": "SUV", "inizioProduzione": 2018, "fineProduzione": null },
-  { "marca": "Citroën", "modello": "C3", "tipiMotore": ["1.2 PureTech", "1.5 BlueHDi"], "carrozzeria": "Hatchback", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "DS Automobiles", "modello": "3 Crossback", "tipiMotore": ["1.2 PureTech", "Electric"], "carrozzeria": "SUV", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Mini", "modello": "Cooper", "tipiMotore": ["1.5 TwinPower", "2.0 John Cooper Works"], "carrozzeria": "Hatchback", "inizioProduzione": 2014, "fineProduzione": null },
-  { "marca": "Jaguar", "modello": "F-Pace", "tipiMotore": ["2.0 Diesel", "3.0 V6 Supercharged"], "carrozzeria": "SUV", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Land Rover", "modello": "Defender", "tipiMotore": ["2.0 Diesel", "3.0 I6 Mild Hybrid"], "carrozzeria": "SUV", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Fiat", "modello": "500", "tipiMotore": ["1.2 Fire", "1.0 Hybrid"], "carrozzeria": "Citycar", "inizioProduzione": 2007, "fineProduzione": null },
-  { "marca": "Dacia", "modello": "Sandero", "tipiMotore": ["1.0 SCe", "1.5 Blue dCi"], "carrozzeria": "Hatchback", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Lexus", "modello": "NX", "tipiMotore": ["2.5 Hybrid", "2.4 Turbo Hybrid"], "carrozzeria": "SUV", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Ferrari", "modello": "F8 Tributo", "tipiMotore": ["3.9 V8 Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Ferrari", "modello": "296 GTB", "tipiMotore": ["2.9 V6 Hybrid"], "carrozzeria": "Coupé", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Lamborghini", "modello": "Huracán", "tipiMotore": ["5.2 V10"], "carrozzeria": "Coupé", "inizioProduzione": 2014, "fineProduzione": null },
-  { "marca": "McLaren", "modello": "720S", "tipiMotore": ["4.0 V8 Twin-Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2017, "fineProduzione": null },
-  { "marca": "Porsche", "modello": "Taycan", "tipiMotore": ["Elettrico"], "carrozzeria": "Berlina", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Tesla", "modello": "Model S Plaid", "tipiMotore": ["Elettrico"], "carrozzeria": "Berlina", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "BMW", "modello": "i4", "tipiMotore": ["Elettrico"], "carrozzeria": "Berlina", "inizioProduzione": 2022, "fineProduzione": null },
-  { "marca": "Audi", "modello": "RS e-tron GT", "tipiMotore": ["Elettrico"], "carrozzeria": "Berlina", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Volkswagen", "modello": "ID.4", "tipiMotore": ["Elettrico"], "carrozzeria": "SUV", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Ford", "modello": "Bronco", "tipiMotore": ["2.3 Turbo", "2.7 V6"], "carrozzeria": "SUV", "inizioProduzione": 2021, "fineProduzione": null },
-  { "marca": "Jeep", "modello": "Grand Cherokee", "tipiMotore": ["3.6 V6", "5.7 V8"], "carrozzeria": "SUV", "inizioProduzione": 2022, "fineProduzione": null },
-  { "marca": "Fiat", "modello": "126", "tipiMotore": ["0.7 Benzina"], "carrozzeria": "Citycar", "inizioProduzione": 1972, "fineProduzione": 2000 },
-  { "marca": "Volkswagen", "modello": "Maggiolino", "tipiMotore": ["1.3 Benzina", "1.6 Diesel"], "carrozzeria": "Berlina", "inizioProduzione": 1938, "fineProduzione": 2003 },
-  { "marca": "Toyota", "modello": "Supra", "tipiMotore": ["3.0 Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2019, "fineProduzione": null },
-  { "marca": "Honda", "modello": "NSX", "tipiMotore": ["3.5 V6 Hybrid"], "carrozzeria": "Coupé", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Chevrolet", "modello": "Camaro", "tipiMotore": ["6.2 V8", "2.0 Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Dodge", "modello": "Charger", "tipiMotore": ["3.6 V6", "5.7 V8 Hemi"], "carrozzeria": "Berlina", "inizioProduzione": 2011, "fineProduzione": null },
-  { "marca": "Lancia", "modello": "Ypsilon", "tipiMotore": ["1.0 Hybrid", "1.2 Fire"], "carrozzeria": "Citycar", "inizioProduzione": 2020, "fineProduzione": null },
-  { "marca": "Maserati", "modello": "Ghibli", "tipiMotore": ["2.0 Hybrid", "3.0 V6"], "carrozzeria": "Berlina", "inizioProduzione": 2022, "fineProduzione": null },
-  { "marca": "Smart", "modello": "Fortwo", "tipiMotore": ["0.9 Turbo", "Electric"], "carrozzeria": "Citycar", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Bugatti", "modello": "Chiron", "tipiMotore": ["8.0 W16 Quad-Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca": "Pagani", "modello": "Huayra", "tipiMotore": ["6.0 V12 Twin-Turbo"], "carrozzeria": "Coupé", "inizioProduzione": 2012, "fineProduzione": null },
-  { "marca": "Abarth", "modello": "595", "tipiMotore": ["1.4 T-Jet"], "carrozzeria": "Hatchback", "inizioProduzione": 2016, "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "500X" , "tipiMotore": ["1.0 Firefly Turbo", "1.3 Firefly Turbo", "1.3 Firefly Turbo GPL"] , "carrozzeria": "SUV" , "inizioProduzione": 2014 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "Tipo" , "tipiMotore": ["1.4 Fire", "1.6 Multijet"] , "carrozzeria": "Berlina" , "inizioProduzione": 2015 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "500L" , "tipiMotore": ["1.4 Fire", "1.3 Multijet"] , "carrozzeria": "Monovolume" , "inizioProduzione": 2012 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "500C" , "tipiMotore": ["1.2 Fire", "1.0 Firefly Turbo"] , "carrozzeria": "Cabriolet" , "inizioProduzione": 2009 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "Panda" , "tipiMotore": ["0.9 TwinAir", "1.2 Fire"] , "carrozzeria": "Citycar" , "inizioProduzione": 2012 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "500L Living" , "tipiMotore": ["1.4 Fire", "1.3 Multijet"] , "carrozzeria": "Monovolume" , "inizioProduzione": 2012 , "fineProduzione": null },
-  { "marca":  "Fiat" , "modello": "500L Trekking" , "tipiMotore": ["1.4 Fire", "1.3 Multijet"] , "carrozzeria": "Monovolume" , "inizioProduzione": 2012 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "Stelvio" , "tipiMotore": ["2.0 Turbo", "2.2 Diesel"] , "carrozzeria": "SUV" , "inizioProduzione": 2016 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "Tonale" , "tipiMotore": ["1.3 Turbo", "1.5 Turbo"] , "carrozzeria": "SUV" , "inizioProduzione": 2022 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "Giulietta" , "tipiMotore": ["1.4 Turbo", "1.6 Multijet"] , "carrozzeria": "Hatchback" , "inizioProduzione": 2010 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "4C" , "tipiMotore": ["1.8 Turbo"] , "carrozzeria": "Coupé" , "inizioProduzione": 2013 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "8C" , "tipiMotore": ["4.7 V8"] , "carrozzeria": "Coupé" , "inizioProduzione": 2007 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "Brera" , "tipiMotore": ["2.2 JTS", "3.2 V6"] , "carrozzeria": "Coupé" , "inizioProduzione": 2005 , "fineProduzione": null },
-  { "marca":  "Alfa Romeo" , "modello": "Spider" , "tipiMotore": ["1.8 Turbo", "2.0 Turbo"] , "carrozzeria": "Cabriolet" , "inizioProduzione": 2006 , "fineProduzione": null }
+  {
+    "marca": "Abarth",
+    "modello": "595",
+    "tipiMotore": [
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Abarth",
+    "modello": "124 Spider",
+    "tipiMotore": [
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Abarth",
+    "modello": "695",
+    "tipiMotore": [
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Tonale",
+    "tipiMotore": [
+      "1.3 Turbo",
+      "1.5 Turbo",
+      "Plug-in Hybrid"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2022,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Brera",
+    "tipiMotore": [
+      "2.2 JTS",
+      "3.2 V6"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "155",
+    "tipiMotore": [
+      "2.0 Twin Spark"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1992,
+    "fineProduzione": 1998
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "156",
+    "tipiMotore": [
+      "2.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "147",
+    "tipiMotore": [
+      "1.8",
+      "2.0 TS"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "166",
+    "tipiMotore": [
+      "3.0 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Giulietta",
+    "tipiMotore": [
+      "1.4",
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Stelvio",
+    "tipiMotore": [
+      "2.2",
+      "2.9 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "4C",
+    "tipiMotore": [
+      "1.7 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Giulia",
+    "tipiMotore": [
+      "2.0 Turbo",
+      "2.9 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "159",
+    "tipiMotore": [
+      "2.4",
+      "3.2 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2011
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "166 Sportwagon",
+    "tipiMotore": [
+      "3.0 V6"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2001,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "156 GTA",
+    "tipiMotore": [
+      "3.2 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "147 GTA",
+    "tipiMotore": [
+      "3.2 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "4C Spider",
+    "tipiMotore": [
+      "1.7 Turbo"
+    ],
+    "carrozzeria": "Cabriolet",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "MiTo",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Audi",
+    "modello": "A3",
+    "tipiMotore": [
+      "1.4 TFSI",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "A4",
+    "tipiMotore": [
+      "1.8 TFSI",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "A6",
+    "tipiMotore": [
+      "2.4 FSI",
+      "3.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "A8",
+    "tipiMotore": [
+      "3.0 TFSI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "TT",
+    "tipiMotore": [
+      "2.0 TFSI"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1998,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "R8",
+    "tipiMotore": [
+      "5.2 V10"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "Q3",
+    "tipiMotore": [
+      "2.0 TFSI",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "Q5",
+    "tipiMotore": [
+      "2.0 TFSI",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "Q7",
+    "tipiMotore": [
+      "3.0 TFSI",
+      "3.0 TDI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "RS3",
+    "tipiMotore": [
+      "2.5 TFSI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "RS4",
+    "tipiMotore": [
+      "4.2 V8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Audi",
+    "modello": "A1",
+    "tipiMotore": [
+      "1.0 TFSI"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "A5",
+    "tipiMotore": [
+      "2.0 TFSI"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "A7",
+    "tipiMotore": [
+      "3.0 TFSI"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "S3",
+    "tipiMotore": [
+      "2.0 TFSI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Audi",
+    "modello": "S4",
+    "tipiMotore": [
+      "4.2 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "BMW",
+    "modello": "3 Series",
+    "tipiMotore": [
+      "2.0 Turbo",
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "5 Series",
+    "tipiMotore": [
+      "2.5 Turbo",
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "7 Series",
+    "tipiMotore": [
+      "3.0 Turbo",
+      "4.4 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "X3",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "X5",
+    "tipiMotore": [
+      "3.0 Turbo",
+      "4.4 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "M3",
+    "tipiMotore": [
+      "3.2 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "M5",
+    "tipiMotore": [
+      "4.9 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1998,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "Z4",
+    "tipiMotore": [
+      "2.5 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "1 Series",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "2 Series",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "4 Series",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "i3",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "i8",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2014,
+    "fineProduzione": 2020
+  },
+  {
+    "marca": "BMW",
+    "modello": "X1",
+    "tipiMotore": [
+      "1.5 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "X6",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "BMW",
+    "modello": "M4",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "XM",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": 2000
+  },
+  {
+    "marca": "Citroen",
+    "modello": "Xantia",
+    "tipiMotore": [
+      "2.0",
+      "2.2 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": 2001
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C5",
+    "tipiMotore": [
+      "2.0 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C3",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C4",
+    "tipiMotore": [
+      "1.6",
+      "2.0 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C6",
+    "tipiMotore": [
+      "2.2 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Citroen",
+    "modello": "Berlingo",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "Xsara",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2006
+  },
+  {
+    "marca": "Citroen",
+    "modello": "Saxo",
+    "tipiMotore": [
+      "1.1"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2004
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C2",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2009
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C1",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "DS3",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "DS4",
+    "tipiMotore": [
+      "1.6",
+      "2.0 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "DS5",
+    "tipiMotore": [
+      "2.0 HDi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Citroen",
+    "modello": "C4 Picasso",
+    "tipiMotore": [
+      "1.8",
+      "2.0 HDi"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Citroen",
+    "modello": "Berlingo Multispace",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Panda 141",
+    "tipiMotore": [
+      "1.1"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1990,
+    "fineProduzione": 1995
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Panda 169",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2000
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Panda 312",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Punto",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1993,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Punto Evo",
+    "tipiMotore": [
+      "1.2",
+      "1.4",
+      "1.4 MultiJet"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2007,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Bravo",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Stilo",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2001,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Fiat",
+    "modello": "500",
+    "tipiMotore": [
+      "1.2",
+      "0.9 TwinAir"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "500L",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "500X",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Tipo",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Croma",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2011
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Freemont",
+    "tipiMotore": [
+      "3.2 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Doblò",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Qubo",
+    "tipiMotore": [
+      "1.3"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Multipla",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Idea",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Ford",
+    "modello": "Fiesta",
+    "tipiMotore": [
+      "1.25",
+      "1.4 EcoBoost"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Ford",
+    "modello": "Focus",
+    "tipiMotore": [
+      "1.6",
+      "2.0 EcoBoost"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1998,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Mondeo",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Kuga",
+    "tipiMotore": [
+      "1.5 EcoBoost"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Edge",
+    "tipiMotore": [
+      "2.0 EcoBoost"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "S-Max",
+    "tipiMotore": [
+      "2.0 EcoBoost"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Transit",
+    "tipiMotore": [
+      "2.2 TDCi"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Mustang",
+    "tipiMotore": [
+      "5.0 V8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Ka",
+    "tipiMotore": [
+      "1.0 EcoBoost"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Ford",
+    "modello": "C-Max",
+    "tipiMotore": [
+      "1.6 EcoBoost"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Ford",
+    "modello": "EcoSport",
+    "tipiMotore": [
+      "1.0 EcoBoost"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2003,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Galaxy",
+    "tipiMotore": [
+      "2.2 TDCi"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Puma",
+    "tipiMotore": [
+      "1.0 EcoBoost"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "Ford",
+    "modello": "Courier",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Ford",
+    "modello": "Transit Connect",
+    "tipiMotore": [
+      "1.6 EcoBoost"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Ford",
+    "modello": "Edge ST",
+    "tipiMotore": [
+      "2.7 EcoBoost"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Civic",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Accord",
+    "tipiMotore": [
+      "2.0",
+      "2.4"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "CR-V",
+    "tipiMotore": [
+      "2.0 i-VTEC"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Jazz",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "HR-V",
+    "tipiMotore": [
+      "1.8 i-VTEC"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Insight",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2006
+  },
+  {
+    "marca": "Honda",
+    "modello": "CR-Z",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2010,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Honda",
+    "modello": "Odyssey",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Minivan",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Freed",
+    "tipiMotore": [
+      "1.5"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Honda",
+    "modello": "Stepwgn",
+    "tipiMotore": [
+      "1.5"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "S2000",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2009
+  },
+  {
+    "marca": "Honda",
+    "modello": "Ridgeline",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Civic Type R",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Accord Coupe",
+    "tipiMotore": [
+      "2.4"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Honda",
+    "modello": "HR-V Hybrid",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Honda",
+    "modello": "Civic Hatchback",
+    "tipiMotore": [
+      "1.8"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "i10",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "i20",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "i30",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Elantra",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Sonata",
+    "tipiMotore": [
+      "2.0",
+      "2.4"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Tucson",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Santa Fe",
+    "tipiMotore": [
+      "2.2 Diesel",
+      "2.4"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Kona",
+    "tipiMotore": [
+      "1.0 Turbo",
+      "1.6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Veloster",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Accent",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Genesis",
+    "tipiMotore": [
+      "3.8 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "ix35",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Venue",
+    "tipiMotore": [
+      "1.2 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Palisade",
+    "tipiMotore": [
+      "3.8 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2020,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "Bayon",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2021,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Hyundai",
+    "modello": "i40",
+    "tipiMotore": [
+      "2.0",
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Picanto",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Rio",
+    "tipiMotore": [
+      "1.25",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Ceed",
+    "tipiMotore": [
+      "1.6",
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Optima",
+    "tipiMotore": [
+      "2.0",
+      "2.4"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Kia",
+    "modello": "Sportage",
+    "tipiMotore": [
+      "2.0",
+      "2.4"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Sorento",
+    "tipiMotore": [
+      "2.4",
+      "3.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Stinger",
+    "tipiMotore": [
+      "3.3 V6 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Soul",
+    "tipiMotore": [
+      "1.6",
+      "1.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Carnival",
+    "tipiMotore": [
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "Minivan",
+    "inizioProduzione": 1998,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Forte",
+    "tipiMotore": [
+      "2.0",
+      "1.6 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Cadenza",
+    "tipiMotore": [
+      "3.3 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2010,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Kia",
+    "modello": "Seltos",
+    "tipiMotore": [
+      "2.0",
+      "1.6 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Telluride",
+    "tipiMotore": [
+      "3.8 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Stonic",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Niro",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Kia",
+    "modello": "Venga",
+    "tipiMotore": [
+      "1.1"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Defender",
+    "tipiMotore": [
+      "2.5 Turbo Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1990,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Discovery",
+    "tipiMotore": [
+      "3.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1998,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover",
+    "tipiMotore": [
+      "4.4 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Freelander",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Evoque",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover Sport",
+    "tipiMotore": [
+      "3.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover Velar",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Discovery Sport",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Series II",
+    "tipiMotore": [
+      "2.5 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1991,
+    "fineProduzione": 1999
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Series III",
+    "tipiMotore": [
+      "2.5 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2004
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "LR4",
+    "tipiMotore": [
+      "3.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover Evoque Coupe",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Discovery 4",
+    "tipiMotore": [
+      "3.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Freelander 2",
+    "tipiMotore": [
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover Classic",
+    "tipiMotore": [
+      "3.5 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1994,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "Land Rover",
+    "modello": "Range Rover Vogue",
+    "tipiMotore": [
+      "4.2 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "IS",
+    "tipiMotore": [
+      "2.0",
+      "3.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "ES",
+    "tipiMotore": [
+      "2.5",
+      "3.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1991,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "GS",
+    "tipiMotore": [
+      "3.0 V6",
+      "4.3 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": 2011
+  },
+  {
+    "marca": "Lexus",
+    "modello": "LS",
+    "tipiMotore": [
+      "4.6 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "RC",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "LC",
+    "tipiMotore": [
+      "5.0 V8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "NX",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "RX",
+    "tipiMotore": [
+      "3.5 V6",
+      "2.5 Hybrid"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "UX",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Crossover",
+    "inizioProduzione": 2018,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "CT",
+    "tipiMotore": [
+      "1.8 Hybrid"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2011,
+    "fineProduzione": 2020
+  },
+  {
+    "marca": "Lexus",
+    "modello": "LS Hybrid",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "IS F",
+    "tipiMotore": [
+      "5.0 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2007,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Lexus",
+    "modello": "RC F",
+    "tipiMotore": [
+      "5.0 V8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "GS F",
+    "tipiMotore": [
+      "5.0 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2011
+  },
+  {
+    "marca": "Lexus",
+    "modello": "RX Hybrid",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Lexus",
+    "modello": "NX Hybrid",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "MX-5",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 1989,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda3",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2003,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda6",
+    "tipiMotore": [
+      "2.3",
+      "2.5"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-3",
+    "tipiMotore": [
+      "1.5",
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-5",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-9",
+    "tipiMotore": [
+      "2.5 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "RX-8",
+    "tipiMotore": [
+      "1.3 Rotary"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda2",
+    "tipiMotore": [
+      "1.3",
+      "1.5"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda5",
+    "tipiMotore": [
+      "1.8"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-30",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-50",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2022,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mazda",
+    "modello": "CX-7",
+    "tipiMotore": [
+      "2.3 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda MPV",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2006
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda RX-V",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda Tribute",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2011
+  },
+  {
+    "marca": "Mazda",
+    "modello": "Mazda6 Wagon",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "C-Class",
+    "tipiMotore": [
+      "2.0",
+      "3.0 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "E-Class",
+    "tipiMotore": [
+      "2.2",
+      "3.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "S-Class",
+    "tipiMotore": [
+      "4.7 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1991,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "A-Class",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "CLA",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "GLA",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "GLC",
+    "tipiMotore": [
+      "2.1 Diesel",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "GLE",
+    "tipiMotore": [
+      "3.0 Diesel",
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "GLS",
+    "tipiMotore": [
+      "4.0 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "SLK",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2004
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "SLC",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "AMG GT",
+    "tipiMotore": [
+      "4.0 V8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "CLS",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "G-Class",
+    "tipiMotore": [
+      "4.0 Diesel",
+      "4.0 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "Vito",
+    "tipiMotore": [
+      "2.1 Diesel"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mercedes-Benz",
+    "modello": "B-Class",
+    "tipiMotore": [
+      "1.5",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper S",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Clubman",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Wagon",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Countryman",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Convertible",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2004,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Mini",
+    "modello": "Paceman",
+    "tipiMotore": [
+      "1.6",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2012,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Mini",
+    "modello": "John Cooper Works",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper D",
+    "tipiMotore": [
+      "1.5 Diesel"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper Roadster",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper Electric",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2020,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper Clubman S",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Wagon",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper Convertible S",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2007,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper SD",
+    "tipiMotore": [
+      "1.5 Diesel"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper JCW GP",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Countryman JCW",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Mini",
+    "modello": "Cooper 100",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2018,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Micra",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1992,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Note",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2004,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Qashqai",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Juke",
+    "tipiMotore": [
+      "1.6",
+      "1.2 Turbo"
+    ],
+    "carrozzeria": "Crossover",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "X-Trail",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Leaf",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "370Z",
+    "tipiMotore": [
+      "3.7 V6"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "GT-R",
+    "tipiMotore": [
+      "3.8 V6 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Navara",
+    "tipiMotore": [
+      "2.3 Diesel"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Patrol",
+    "tipiMotore": [
+      "4.8 V8 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Cube",
+    "tipiMotore": [
+      "1.3"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Sentra",
+    "tipiMotore": [
+      "1.8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Altima",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Murano",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Maxima",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Nissan",
+    "modello": "Titan",
+    "tipiMotore": [
+      "5.6 V8"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 2003,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Corsa",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1993,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Astra",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1991,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Insignia",
+    "tipiMotore": [
+      "1.8",
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Zafira",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Opel",
+    "modello": "Meriva",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Opel",
+    "modello": "Vectra",
+    "tipiMotore": [
+      "1.8",
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Opel",
+    "modello": "Adam",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2012,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Opel",
+    "modello": "Mokka",
+    "tipiMotore": [
+      "1.4",
+      "1.6 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Crossland",
+    "tipiMotore": [
+      "1.2 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Vivaro",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Combo",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Karl",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2014,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Opel",
+    "modello": "Antara",
+    "tipiMotore": [
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Opel",
+    "modello": "Signum",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2003,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Opel",
+    "modello": "Zafira Tourer",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Opel",
+    "modello": "Ampera",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2011,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "206",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "207",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "308",
+    "tipiMotore": [
+      "1.6",
+      "1.2 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "508",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "307",
+    "tipiMotore": [
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2001,
+    "fineProduzione": 2008
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "2008",
+    "tipiMotore": [
+      "1.2",
+      "1.6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "3008",
+    "tipiMotore": [
+      "1.6",
+      "1.5 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "5008",
+    "tipiMotore": [
+      "1.6",
+      "1.5 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "RCZ",
+    "tipiMotore": [
+      "1.6 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2010,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "Partner",
+    "tipiMotore": [
+      "1.6 Diesel"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "Expert",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "107",
+    "tipiMotore": [
+      "0.9"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "208",
+    "tipiMotore": [
+      "1.2",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "108",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "4007",
+    "tipiMotore": [
+      "2.2 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2007,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Peugeot",
+    "modello": "RCZ R",
+    "tipiMotore": [
+      "1.6 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "911",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Boxster",
+    "tipiMotore": [
+      "2.7",
+      "3.2"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Cayman",
+    "tipiMotore": [
+      "2.7",
+      "3.4"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2005,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Panamera",
+    "tipiMotore": [
+      "3.0 V6",
+      "4.0 V8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2009,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Cayenne",
+    "tipiMotore": [
+      "3.0 V6",
+      "4.8 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Macan",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "918 Spyder",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2013,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Carrera GT",
+    "tipiMotore": [
+      "5.7 V10"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2004,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Porsche",
+    "modello": "Cayman GT4",
+    "tipiMotore": [
+      "3.8"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "911 Turbo",
+    "tipiMotore": [
+      "3.8 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "911 GT3",
+    "tipiMotore": [
+      "3.6"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "911 Targa",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "718",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Porsche",
+    "modello": "924",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1988,
+    "fineProduzione": 1991
+  },
+  {
+    "marca": "Porsche",
+    "modello": "944",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1990,
+    "fineProduzione": 1994
+  },
+  {
+    "marca": "Porsche",
+    "modello": "968",
+    "tipiMotore": [
+      "3.0"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1992,
+    "fineProduzione": 1995
+  },
+  {
+    "marca": "Renault",
+    "modello": "Clio",
+    "tipiMotore": [
+      "1.2",
+      "1.5 dCi"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Megane",
+    "tipiMotore": [
+      "1.6",
+      "2.0 dCi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Laguna",
+    "tipiMotore": [
+      "2.0",
+      "2.2 dCi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1994,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Renault",
+    "modello": "Twingo",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1992,
+    "fineProduzione": 2007
+  },
+  {
+    "marca": "Renault",
+    "modello": "Scenic",
+    "tipiMotore": [
+      "1.6",
+      "2.0 dCi"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Koleos",
+    "tipiMotore": [
+      "2.0",
+      "2.5 dCi"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Espace",
+    "tipiMotore": [
+      "2.0",
+      "2.2 dCi"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Captur",
+    "tipiMotore": [
+      "1.2",
+      "1.5 dCi"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2013,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Talisman",
+    "tipiMotore": [
+      "2.0",
+      "2.5 dCi"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2015,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Kangoo",
+    "tipiMotore": [
+      "1.5 dCi"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Trafic",
+    "tipiMotore": [
+      "2.0 dCi"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1988,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Master",
+    "tipiMotore": [
+      "2.3 dCi"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 2006,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Duster",
+    "tipiMotore": [
+      "1.6",
+      "1.5 dCi"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Renault",
+    "modello": "Symbol",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2002,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Renault",
+    "modello": "Fluence",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Renault",
+    "modello": "Twizy",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Ibiza",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1984,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Leon",
+    "tipiMotore": [
+      "1.4",
+      "2.0"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Toledo",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1991,
+    "fineProduzione": 2009
+  },
+  {
+    "marca": "Seat",
+    "modello": "Alhambra",
+    "tipiMotore": [
+      "2.0",
+      "2.2"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Seat",
+    "modello": "Ateca",
+    "tipiMotore": [
+      "1.6",
+      "2.0"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Tarraco",
+    "tipiMotore": [
+      "2.0",
+      "2.2"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2018,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Cordoba",
+    "tipiMotore": [
+      "1.8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1993,
+    "fineProduzione": 2009
+  },
+  {
+    "marca": "Seat",
+    "modello": "Exeo",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Seat",
+    "modello": "Mii",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Cupra",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2018,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Inca",
+    "tipiMotore": [
+      "1.4"
+    ],
+    "carrozzeria": "Minivan",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "Seat",
+    "modello": "Arona",
+    "tipiMotore": [
+      "1.0",
+      "1.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Seat",
+    "modello": "Altea",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2004,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Seat",
+    "modello": "Altea XL",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2004,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Seat",
+    "modello": "Fura",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2003
+  },
+  {
+    "marca": "Seat",
+    "modello": "Fura El-Bach",
+    "tipiMotore": [
+      "1.2"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2003
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Octavia",
+    "tipiMotore": [
+      "1.4",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Fabia",
+    "tipiMotore": [
+      "1.2",
+      "1.4"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Superb",
+    "tipiMotore": [
+      "1.8",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Rapid",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Kodiaq",
+    "tipiMotore": [
+      "2.0 TDI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Karoq",
+    "tipiMotore": [
+      "1.5 TSI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Scala",
+    "tipiMotore": [
+      "1.0",
+      "1.5 TSI"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Roomster",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2015
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Yeti",
+    "tipiMotore": [
+      "1.4 TSI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2009,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Citigo",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Kamiq",
+    "tipiMotore": [
+      "1.0",
+      "1.5 TSI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Enyaq",
+    "tipiMotore": [
+      "Electric"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2020,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Felicia",
+    "tipiMotore": [
+      "1.1"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1994,
+    "fineProduzione": 2001
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Favorit",
+    "tipiMotore": [
+      "1.1"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1990,
+    "fineProduzione": 2000
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Octavia Combi",
+    "tipiMotore": [
+      "1.4",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Skoda",
+    "modello": "Superb Combi",
+    "tipiMotore": [
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2001,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Impreza",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1992,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Forester",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Outback",
+    "tipiMotore": [
+      "2.5"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Legacy",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "BRZ",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "WRX",
+    "tipiMotore": [
+      "2.0 Turbo",
+      "2.5 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1992,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "XV",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "Crossover",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Justy",
+    "tipiMotore": [
+      "1.3"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2007,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Levorg",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2014,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Exiga",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Tribeca",
+    "tipiMotore": [
+      "3.0 V6"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Subaru",
+    "modello": "SVX",
+    "tipiMotore": [
+      "3.0"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1991,
+    "fineProduzione": 1996
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Vivio",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1992,
+    "fineProduzione": 1998
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Alcyone",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2000
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Sambar",
+    "tipiMotore": [
+      "0.7"
+    ],
+    "carrozzeria": "Mini Truck",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Subaru",
+    "modello": "Impreza WRX STI",
+    "tipiMotore": [
+      "2.5 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2014
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Corolla",
+    "tipiMotore": [
+      "1.6",
+      "1.8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Camry",
+    "tipiMotore": [
+      "2.4",
+      "3.5 V6"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1992,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Prius",
+    "tipiMotore": [
+      "Hybrid"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Yaris",
+    "tipiMotore": [
+      "1.0",
+      "1.33"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "RAV4",
+    "tipiMotore": [
+      "2.0",
+      "2.5"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Land Cruiser",
+    "tipiMotore": [
+      "4.5 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Hilux",
+    "tipiMotore": [
+      "2.5 Diesel"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Auris",
+    "tipiMotore": [
+      "1.33",
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Avensis",
+    "tipiMotore": [
+      "1.8",
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Toyota",
+    "modello": "C-HR",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Crossover",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Supra",
+    "tipiMotore": [
+      "3.0 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1993,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "Toyota",
+    "modello": "GT86",
+    "tipiMotore": [
+      "2.0 Boxer"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "86",
+    "tipiMotore": [
+      "2.0 Boxer"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Sienna",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Minivan",
+    "inizioProduzione": 1997,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Tacoma",
+    "tipiMotore": [
+      "3.5 V6"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 1995,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Toyota",
+    "modello": "Sequoia",
+    "tipiMotore": [
+      "5.7 V8"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Golf",
+    "tipiMotore": [
+      "1.4",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1991,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Polo",
+    "tipiMotore": [
+      "1.0",
+      "1.2"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1994,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Passat",
+    "tipiMotore": [
+      "1.8",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1996,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Beetle",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Cabriolet",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Tiguan",
+    "tipiMotore": [
+      "2.0 TSI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Touareg",
+    "tipiMotore": [
+      "3.0 V6 TDI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Jetta",
+    "tipiMotore": [
+      "1.4",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Scirocco",
+    "tipiMotore": [
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2017
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Touran",
+    "tipiMotore": [
+      "1.6",
+      "2.0 TDI"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 2003,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Amarok",
+    "tipiMotore": [
+      "3.0 V6 TDI"
+    ],
+    "carrozzeria": "Pickup",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Sharan",
+    "tipiMotore": [
+      "2.0 TDI"
+    ],
+    "carrozzeria": "MPV",
+    "inizioProduzione": 1999,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Up!",
+    "tipiMotore": [
+      "1.0"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2011,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "T-Cross",
+    "tipiMotore": [
+      "1.0",
+      "1.5 TSI"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2019,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Multivan",
+    "tipiMotore": [
+      "2.0 TDI"
+    ],
+    "carrozzeria": "Van",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Arteon",
+    "tipiMotore": [
+      "2.0 TSI"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volkswagen",
+    "modello": "Golf GTI",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "S60",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2000,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "S80",
+    "tipiMotore": [
+      "2.5",
+      "2.9"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V70",
+    "tipiMotore": [
+      "2.4",
+      "2.5"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Volvo",
+    "modello": "XC90",
+    "tipiMotore": [
+      "3.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2002,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "XC60",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2008,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V40",
+    "tipiMotore": [
+      "1.6"
+    ],
+    "carrozzeria": "Hatchback",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Volvo",
+    "modello": "S40",
+    "tipiMotore": [
+      "1.8"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V50",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2004,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Volvo",
+    "modello": "XC40",
+    "tipiMotore": [
+      "2.0 Diesel",
+      "Electric"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2017,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V60",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2010,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V90",
+    "tipiMotore": [
+      "2.0 Diesel"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "C30",
+    "tipiMotore": [
+      "1.8 Turbo"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Volvo",
+    "modello": "C70",
+    "tipiMotore": [
+      "2.2"
+    ],
+    "carrozzeria": "Cabriolet",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2013
+  },
+  {
+    "marca": "Volvo",
+    "modello": "S90",
+    "tipiMotore": [
+      "2.0 Turbo"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Volvo",
+    "modello": "V70 Wagon",
+    "tipiMotore": [
+      "2.5 Diesel"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2016
+  },
+  {
+    "marca": "Volvo",
+    "modello": "P1800",
+    "tipiMotore": [
+      "2.0"
+    ],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 1992,
+    "fineProduzione": 1997
+  }
 ]
