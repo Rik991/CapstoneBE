@@ -1,8 +1,7 @@
 // AutopartController.java
 package it.rik.capstoneBE.autoparts;
 
-import it.rik.capstoneBE.filestorage.FileStorageService;
-import it.rik.capstoneBE.user.User;
+
 import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -27,7 +26,7 @@ public class AutopartController {
 
     private final AutopartService autopartService;
     private final ResellerRepository resellerRepository;
-    private final FileStorageService fileStorageService;
+
 
     @GetMapping
     public ResponseEntity<Page<AutopartDTO.Response>> getAll(
