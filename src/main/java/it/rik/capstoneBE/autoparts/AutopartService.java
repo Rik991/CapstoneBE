@@ -102,7 +102,7 @@ public class AutopartService {
         Reseller reseller = resellerRepository.findByUserUsername(username)
                 .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
         if (!autopart.getReseller().getId().equals(reseller.getId())) {
-            throw new SecurityException("Non sei autorizzato a modificare questa autopart");
+            throw new NotYourAutopart("Non sei autorizzato a modificare questa autopart");
         }
 
         //Aggiornamento dei campi
@@ -121,7 +121,6 @@ public class AutopartService {
                 try {
                     fileStorageServiceAmazon.deleteFile(autopart.getImmagine());
                 } catch (Exception ex) {
-                    // Logga l'errore se necessario, ma puoi decidere se continuare o interrompere l'operazione
                     System.err.println("Errore nella cancellazione del file vecchio: " + ex.getMessage());
                 }
             }
