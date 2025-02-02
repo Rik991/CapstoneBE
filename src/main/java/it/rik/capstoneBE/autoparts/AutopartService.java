@@ -1,6 +1,7 @@
 // AutopartService.java
 package it.rik.capstoneBE.autoparts;
 
+import it.rik.capstoneBE.config.amazons3.FileStorageService;
 import it.rik.capstoneBE.exceptions.NotYourAutopart;
 import it.rik.capstoneBE.mapper.Mapper;
 import it.rik.capstoneBE.price.Prezzo;
@@ -32,6 +33,7 @@ public class AutopartService {
     private final VehicleRepository vehicleRepository;
     private final ResellerRepository resellerRepository;
     private final Mapper mapper;
+    private final FileStorageService fileStorageServiceAmazon;
 
     public Page<AutopartDTO.Response> getAllAutoparts(Pageable pageable) {
         return autopartRepository.findAll(pageable)
@@ -69,15 +71,8 @@ public class AutopartService {
         // Gestione del MultipartFile
         MultipartFile immagine = request.getImmagine();
         if (immagine != null && !immagine.isEmpty()) {
-            try {
-                String fileName = immagine.getOriginalFilename();
-                Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
-                Path targetLocation = fileStorageLocation.resolve(fileName);
-                Files.copy(immagine.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
-                autopart.setImmagine(fileName);
-            } catch (IOException ex) {
-                throw new RuntimeException("Errore durante il salvataggio del file", ex);
-            }
+            String fileName = fileStorageServiceAmazon.storeFile(immagine);
+            autopart.setImmagine(fileName);
         }
 
         if (reseller != null) {
@@ -107,7 +102,7 @@ public class AutopartService {
         Reseller reseller = resellerRepository.findByUserUsername(username)
                 .orElseThrow(() -> new EntityNotFoundException("Reseller non trovato"));
         if (!autopart.getReseller().getId().equals(reseller.getId())) {
-            throw new SecurityException("Non sei autorizzato a modificare questa autopart");
+            throw new NotYourAutopart("Non sei autorizzato a modificare questa autopart");
         }
 
         //Aggiornamento dei campi
@@ -118,25 +113,20 @@ public class AutopartService {
         autopart.setCondizione(request.getCondizione());
 
 
-        // Gestione immagine (se presente)
-        if (request.getImmagine() != null && !request.getImmagine().isEmpty()) {
-            try {
-                String fileName = request.getImmagine().getOriginalFilename();
-                Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
-                Files.createDirectories(fileStorageLocation); // Crea la directory se non esiste
-                Path targetLocation = fileStorageLocation.resolve(fileName);
-
-                // Cancella l'immagine vecchia se esiste e se è diversa dalla nuova
-                if (autopart.getImmagine() != null && !autopart.getImmagine().equals(fileName)) {
-                    Path oldImagePath = fileStorageLocation.resolve(autopart.getImmagine());
-                    Files.deleteIfExists(oldImagePath);
+        // Gestione dell'immagine
+        MultipartFile nuovaImmagine = request.getImmagine();
+        if (nuovaImmagine != null && !nuovaImmagine.isEmpty()) {
+            // Se esiste una vecchia immagine e il nome è diverso dalla nuova, cancellala dal bucket S3
+            if (autopart.getImmagine() != null && !autopart.getImmagine().equals(nuovaImmagine.getOriginalFilename())) {
+                try {
+                    fileStorageServiceAmazon.deleteFile(autopart.getImmagine());
+                } catch (Exception ex) {
+                    System.err.println("Errore nella cancellazione del file vecchio: " + ex.getMessage());
                 }
-
-                Files.copy(request.getImmagine().getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING);
-                autopart.setImmagine(fileName);
-            } catch (IOException ex) {
-                throw new RuntimeException("Errore durante l'aggiornamento del file", ex);
             }
+            // Carica la nuova immagine su S3 e aggiorna il campo dell'entità
+            String nuovoNomeFile = fileStorageServiceAmazon.storeFile(nuovaImmagine);
+            autopart.setImmagine(nuovoNomeFile);
         }
         //Aggiorniamo i veicoli compatibili
         Set<Vehicle> veicoliAggiornati = new HashSet<>(vehicleRepository.findAllById(request.getVeicoliIds()));
@@ -170,15 +160,15 @@ public class AutopartService {
             throw new SecurityException("Non sei autorizzato ad eliminare questo ricambio");
         }
 
-        // Cancella l'immagine associata se esiste
+        // Cancella l'immagine associata, se esiste
         if (autopart.getImmagine() != null) {
-            Path fileStorageLocation = Paths.get("./upload").toAbsolutePath().normalize();
-            Path imagePath = fileStorageLocation.resolve(autopart.getImmagine());
             try {
-                Files.deleteIfExists(imagePath);
-            } catch (IOException ex) {
-                throw new RuntimeException("Errore durante la cancellazione del file", ex);
-            }}
+                fileStorageServiceAmazon.deleteFile(autopart.getImmagine());
+            } catch (Exception ex) {
+                // Logga l'errore o gestisci l'eccezione in base alle tue esigenze
+                System.err.println("Errore nella cancellazione del file: " + ex.getMessage());
+            }
+        }
         autopartRepository.delete(autopart);
     }
 

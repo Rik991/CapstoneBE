@@ -3,7 +3,7 @@ package it.rik.capstoneBE.user;
 import it.rik.capstoneBE.auth.AuthResponse;
 import it.rik.capstoneBE.auth.RegisterRequest;
 import it.rik.capstoneBE.auth.jwt.JwtTokenUtil;
-import it.rik.capstoneBE.cloudinary.CloudinaryService;
+import it.rik.capstoneBE.config.amazons3.FileStorageService;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import jakarta.persistence.EntityExistsException;
@@ -26,7 +26,7 @@ import java.util.Set;
 public class UserService {
 
     @Autowired
-    private CloudinaryService cloudinaryService;
+    private FileStorageService fileStorageServiceAmazon;
 
     @Autowired
     private UserRepository userRepository;
@@ -54,7 +54,8 @@ public class UserService {
         BeanUtils.copyProperties(registerRequest, user);
 
         if (avatar != null && !avatar.isEmpty()) {
-            user.setAvatar(cloudinaryService.uploader(avatar, "users").get("url").toString());
+            String fileName = fileStorageServiceAmazon.storeFile(avatar);
+            user.setAvatar(fileName);
         }
 
         user.setRoles(roles);
@@ -72,7 +73,8 @@ public class UserService {
         BeanUtils.copyProperties(registerRequest, user);
 
         if (avatar != null && !avatar.isEmpty()) {
-            user.setAvatar(cloudinaryService.uploader(avatar, "users").get("url").toString());
+            String fileName = fileStorageServiceAmazon.storeFile(avatar);
+            user.setAvatar(fileName);
         }
 
         user.setRoles(Set.of(Role.ROLE_RESELLER));
