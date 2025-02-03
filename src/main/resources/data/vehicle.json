@@ -31,173 +31,147 @@
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "Tonale",
-    "tipiMotore": [
-      "1.3 Turbo",
-      "1.5 Turbo",
-      "Plug-in Hybrid"
-    ],
-    "carrozzeria": "SUV",
-    "inizioProduzione": 2022,
-    "fineProduzione": null
+    "modello": "Alfetta",
+    "tipiMotore": ["2.0 Twin Cam", "2.5 V6"],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1972,
+    "fineProduzione": 1987
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "Brera",
-    "tipiMotore": [
-      "2.2 JTS",
-      "3.2 V6"
-    ],
-    "carrozzeria": "Coupé",
-    "inizioProduzione": 2005,
-    "fineProduzione": 2010
+    "modello": "33",
+    "tipiMotore": ["1.8", "2.0", "2.5 V6"],
+    "carrozzeria": "Berlina/Coupé",
+    "inizioProduzione": 1983,
+    "fineProduzione": 1995
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "75",
+    "tipiMotore": ["2.0", "2.5 V6"],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1985,
+    "fineProduzione": 1992
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "SZ",
+    "tipiMotore": ["3.0 V6"],
+    "carrozzeria": "Coupé sportiva",
+    "inizioProduzione": 1989,
+    "fineProduzione": 1991
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "164",
+    "tipiMotore": ["3.0 V6", "3.0 V6 Turbo", "2.5 Turbo Diesel"],
+    "carrozzeria": "Berlina di lusso",
+    "inizioProduzione": 1987,
+    "fineProduzione": 1998
   },
   {
     "marca": "Alfa Romeo",
     "modello": "155",
-    "tipiMotore": [
-      "2.0 Twin Spark"
-    ],
-    "carrozzeria": "Berlina",
+    "tipiMotore": ["2.0", "2.5 V6", "2.0 Turbo Diesel"],
+    "carrozzeria": "Berlina sportiva",
     "inizioProduzione": 1992,
     "fineProduzione": 1998
   },
   {
     "marca": "Alfa Romeo",
     "modello": "156",
-    "tipiMotore": [
-      "2.5 V6"
-    ],
+    "tipiMotore": ["1.6", "1.8", "2.0", "3.2 V6", "2.4 Turbo Diesel"],
     "carrozzeria": "Berlina",
     "inizioProduzione": 1997,
     "fineProduzione": 2007
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "147",
-    "tipiMotore": [
-      "1.8",
-      "2.0 TS"
-    ],
-    "carrozzeria": "Berlina",
-    "inizioProduzione": 2000,
-    "fineProduzione": 2010
-  },
-  {
-    "marca": "Alfa Romeo",
     "modello": "166",
-    "tipiMotore": [
-      "3.0 V6"
-    ],
+    "tipiMotore": ["2.0", "2.5 V6", "3.0 V6"],
     "carrozzeria": "Berlina",
     "inizioProduzione": 1998,
     "fineProduzione": 2007
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "Giulietta",
-    "tipiMotore": [
-      "1.4",
-      "1.6",
-      "2.0"
-    ],
-    "carrozzeria": "Berlina",
-    "inizioProduzione": 2010,
-    "fineProduzione": null
+    "modello": "147",
+    "tipiMotore": ["1.4", "1.6", "1.8", "2.0", "1.9 Diesel"],
+    "carrozzeria": "Compatta/Hatchback",
+    "inizioProduzione": 2000,
+    "fineProduzione": 2010
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "Stelvio",
-    "tipiMotore": [
-      "2.2",
-      "2.9 V6"
-    ],
-    "carrozzeria": "SUV",
-    "inizioProduzione": 2016,
-    "fineProduzione": null
-  },
-  {
-    "marca": "Alfa Romeo",
-    "modello": "4C",
-    "tipiMotore": [
-      "1.7 Turbo"
-    ],
+    "modello": "GT",
+    "tipiMotore": ["2.0", "2.4", "3.2 V6"],
     "carrozzeria": "Coupé",
-    "inizioProduzione": 2013,
-    "fineProduzione": null
-  },
-  {
-    "marca": "Alfa Romeo",
-    "modello": "Giulia",
-    "tipiMotore": [
-      "2.0 Turbo",
-      "2.9 V6"
-    ],
-    "carrozzeria": "Berlina",
-    "inizioProduzione": 2016,
-    "fineProduzione": null
+    "inizioProduzione": 2003,
+    "fineProduzione": 2010
   },
   {
     "marca": "Alfa Romeo",
     "modello": "159",
-    "tipiMotore": [
-      "2.4",
-      "3.2 V6"
-    ],
+    "tipiMotore": ["2.4", "3.2 V6", "2.2 Turbo Diesel"],
     "carrozzeria": "Berlina",
     "inizioProduzione": 2005,
     "fineProduzione": 2011
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "166 Sportwagon",
-    "tipiMotore": [
-      "3.0 V6"
-    ],
-    "carrozzeria": "Station Wagon",
-    "inizioProduzione": 2001,
-    "fineProduzione": 2007
+    "modello": "Brera",
+    "tipiMotore": ["2.2", "3.2 V6"],
+    "carrozzeria": "Coupé",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2010
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "156 GTA",
-    "tipiMotore": [
-      "3.2 V6"
-    ],
+    "modello": "MiTo",
+    "tipiMotore": ["1.4", "1.4 Turbo", "1.6 Diesel"],
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 2008,
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Giulietta",
+    "tipiMotore": ["1.4", "1.6", "1.75", "1.4 Diesel"],
+    "carrozzeria": "Hatchback/Compatta",
+    "inizioProduzione": 2010,
+    "fineProduzione": 2020
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "4C",
+    "tipiMotore": ["1.7 Turbo"],
+    "carrozzeria": "Coupé sportiva",
+    "inizioProduzione": 2013,
+    "fineProduzione": 2020
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Giulia",
+    "tipiMotore": ["2.0 Turbo", "2.2 Diesel", "2.9 V6 Quadrifoglio"],
     "carrozzeria": "Berlina",
-    "inizioProduzione": 2003,
-    "fineProduzione": 2007
-  },
-  {
-    "marca": "Alfa Romeo",
-    "modello": "147 GTA",
-    "tipiMotore": [
-      "3.2 V6"
-    ],
-    "carrozzeria": "Berlina",
-    "inizioProduzione": 2003,
-    "fineProduzione": 2007
-  },
-  {
-    "marca": "Alfa Romeo",
-    "modello": "4C Spider",
-    "tipiMotore": [
-      "1.7 Turbo"
-    ],
-    "carrozzeria": "Cabriolet",
     "inizioProduzione": 2015,
     "fineProduzione": null
   },
   {
     "marca": "Alfa Romeo",
-    "modello": "MiTo",
-    "tipiMotore": [
-      "1.4",
-      "1.6"
-    ],
-    "carrozzeria": "Berlina",
-    "inizioProduzione": 2008,
-    "fineProduzione": 2018
+    "modello": "Stelvio",
+    "tipiMotore": ["2.0 Turbo", "2.2 Diesel", "2.9 V6 Quadrifoglio"],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2016,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Alfa Romeo",
+    "modello": "Tonale",
+    "tipiMotore": ["1.5 Turbo Hybrid", "1.5 Diesel Hybrid"],
+    "carrozzeria": "SUV Coupé",
+    "inizioProduzione": 2022,
+    "fineProduzione": null
   },
   {
     "marca": "Audi",
@@ -728,25 +702,111 @@
   },
   {
     "marca": "Fiat",
-    "modello": "Punto",
+    "modello": "Panda",
+    "tipiMotore": [
+      "0.9 TwinAir",
+      "1.0 Fire",
+      "1.2",
+      "1.3 Diesel"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2012,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Uno",
+    "tipiMotore": [
+      "0.9",
+      "1.0",
+      "1.1",
+      "1.3",
+      "1.4",
+      "1.5"
+    ],
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 1983,
+    "fineProduzione": 1995
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Tipo (prima generazione)",
+    "tipiMotore": [
+      "1.1",
+      "1.4",
+      "1.6",
+      "1.8",
+      "2.0",
+      "1.7 Diesel",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 1988,
+    "fineProduzione": 1995
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Tempra",
+    "tipiMotore": [
+      "1.4",
+      "1.6",
+      "1.8",
+      "2.0",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "Berlina/Familiare",
+    "inizioProduzione": 1990,
+    "fineProduzione": 1997
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Cinquecento",
+    "tipiMotore": [
+      "0.7",
+      "0.9",
+      "1.1"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1991,
+    "fineProduzione": 1998
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Punto Mk1",
+    "tipiMotore": [
+      "1.1",
+      "1.2",
+      "1.4",
+      "1.6"
+    ],
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 1993,
+    "fineProduzione": 1999
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Punto Mk2",
     "tipiMotore": [
       "1.2",
-      "1.4"
+      "1.4",
+      "1.6",
+      "1.9 Diesel"
     ],
-    "carrozzeria": "Hatchback",
-    "inizioProduzione": 1993,
-    "fineProduzione": 2018
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 1999,
+    "fineProduzione": 2010
   },
   {
     "marca": "Fiat",
     "modello": "Punto Evo",
     "tipiMotore": [
-      "1.2",
       "1.4",
-      "1.4 MultiJet"
+      "1.6",
+      "1.4 Turbo",
+      "1.3 Diesel"
     ],
-    "carrozzeria": "Hatchback",
-    "inizioProduzione": 2007,
+    "carrozzeria": "Compatta",
+    "inizioProduzione": 2011,
     "fineProduzione": 2018
   },
   {
@@ -754,29 +814,103 @@
     "modello": "Bravo",
     "tipiMotore": [
       "1.4",
-      "1.6"
+      "1.6",
+      "1.8",
+      "2.0",
+      "1.9 Diesel"
     ],
-    "carrozzeria": "Hatchback",
+    "carrozzeria": "Compatta",
     "inizioProduzione": 1995,
-    "fineProduzione": 2007
+    "fineProduzione": 2001
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Brava",
+    "tipiMotore": [
+      "1.4",
+      "1.6",
+      "1.8",
+      "2.0",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "Berlina",
+    "inizioProduzione": 1995,
+    "fineProduzione": 2001
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Marea",
+    "tipiMotore": [
+      "1.6",
+      "1.8",
+      "2.0",
+      "2.4",
+      "1.9 Diesel",
+      "2.4 Diesel"
+    ],
+    "carrozzeria": "Berlina/Familiare",
+    "inizioProduzione": 1996,
+    "fineProduzione": 2002
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Seicento",
+    "tipiMotore": [
+      "0.9",
+      "1.1"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 1997,
+    "fineProduzione": 2010
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Multipla",
+    "tipiMotore": [
+      "1.6",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "Monovolume",
+    "inizioProduzione": 1998,
+    "fineProduzione": 2010
   },
   {
     "marca": "Fiat",
     "modello": "Stilo",
     "tipiMotore": [
+      "1.2",
+      "1.4",
+      "1.6",
       "1.8",
-      "2.0"
+      "2.4",
+      "1.9 Diesel"
     ],
-    "carrozzeria": "Berlina",
+    "carrozzeria": "Compatta",
     "inizioProduzione": 2001,
     "fineProduzione": 2007
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Croma",
+    "tipiMotore": [
+      "1.8",
+      "2.2",
+      "2.4",
+      "1.9 Diesel",
+      "2.4 Diesel"
+    ],
+    "carrozzeria": "Station Wagon",
+    "inizioProduzione": 2005,
+    "fineProduzione": 2010
   },
   {
     "marca": "Fiat",
     "modello": "500",
     "tipiMotore": [
       "1.2",
-      "0.9 TwinAir"
+      "1.4",
+      "0.9 TwinAir",
+      "1.3 Diesel"
     ],
     "carrozzeria": "City Car",
     "inizioProduzione": 2007,
@@ -784,11 +918,37 @@
   },
   {
     "marca": "Fiat",
+    "modello": "500C",
+    "tipiMotore": [
+      "1.2",
+      "1.4",
+      "0.9 TwinAir",
+      "1.3 Diesel"
+    ],
+    "carrozzeria": "City Car (Cabrio)",
+    "inizioProduzione": 2007,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "500e",
+    "tipiMotore": [
+      "Elettrico"
+    ],
+    "carrozzeria": "City Car",
+    "inizioProduzione": 2013,
+    "fineProduzione": 2019
+  },
+  {
+    "marca": "Fiat",
     "modello": "500L",
     "tipiMotore": [
-      "1.4"
+      "1.4",
+      "0.9 TwinAir",
+      "1.3 Diesel",
+      "1.6 Diesel"
     ],
-    "carrozzeria": "MPV",
+    "carrozzeria": "Monovolume",
     "inizioProduzione": 2012,
     "fineProduzione": null
   },
@@ -796,33 +956,99 @@
     "marca": "Fiat",
     "modello": "500X",
     "tipiMotore": [
-      "1.4",
-      "1.6"
+      "1.6",
+      "1.4 Turbo",
+      "2.0",
+      "1.3 Diesel",
+      "1.6 Diesel",
+      "2.0 Diesel"
     ],
-    "carrozzeria": "SUV",
+    "carrozzeria": "SUV Compatto",
     "inizioProduzione": 2014,
     "fineProduzione": null
   },
   {
     "marca": "Fiat",
-    "modello": "Tipo",
+    "modello": "Tipo (nuova generazione)",
     "tipiMotore": [
       "1.4",
-      "1.6"
+      "1.6",
+      "1.4 Turbo",
+      "1.3 Diesel"
     ],
-    "carrozzeria": "Berlina",
+    "carrozzeria": "Compatta/Berlina",
     "inizioProduzione": 2015,
     "fineProduzione": null
   },
   {
     "marca": "Fiat",
-    "modello": "Croma",
+    "modello": "Qubo",
     "tipiMotore": [
-      "2.0"
+      "1.3",
+      "1.4"
     ],
     "carrozzeria": "MPV",
+    "inizioProduzione": 2012,
+    "fineProduzione": 2021
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Fiorino",
+    "tipiMotore": [
+      "0.9",
+      "1.0",
+      "1.2",
+      "1.3 Diesel"
+    ],
+    "carrozzeria": "Furgone/Commerciabile",
+    "inizioProduzione": 1980,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Ducato",
+    "tipiMotore": [
+      "1.9 Diesel",
+      "2.3 Diesel",
+      "2.3 Multijet"
+    ],
+    "carrozzeria": "Furgone",
+    "inizioProduzione": 1981,
+    "fineProduzione": null
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Sedici",
+    "tipiMotore": [
+      "1.6",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "SUV",
+    "inizioProduzione": 2006,
+    "fineProduzione": 2012
+  },
+  {
+    "marca": "Fiat",
+    "modello": "Grande Punto",
+    "tipiMotore": [
+      "1.2",
+      "1.4",
+      "1.6",
+      "1.9 Diesel"
+    ],
+    "carrozzeria": "Compatta",
     "inizioProduzione": 2005,
-    "fineProduzione": 2011
+    "fineProduzione": 2018
+  },
+  {
+    "marca": "Fiat",
+    "modello": "124 Spider",
+    "tipiMotore": [
+      "1.4 Turbo"
+    ],
+    "carrozzeria": "Roadster",
+    "inizioProduzione": 2016,
+    "fineProduzione": 2019
   },
   {
     "marca": "Fiat",
@@ -833,48 +1059,6 @@
     "carrozzeria": "SUV",
     "inizioProduzione": 2008,
     "fineProduzione": 2015
-  },
-  {
-    "marca": "Fiat",
-    "modello": "Doblò",
-    "tipiMotore": [
-      "1.4",
-      "1.6"
-    ],
-    "carrozzeria": "Furgone",
-    "inizioProduzione": 2000,
-    "fineProduzione": null
-  },
-  {
-    "marca": "Fiat",
-    "modello": "Qubo",
-    "tipiMotore": [
-      "1.3"
-    ],
-    "carrozzeria": "MPV",
-    "inizioProduzione": 2008,
-    "fineProduzione": 2013
-  },
-  {
-    "marca": "Fiat",
-    "modello": "Multipla",
-    "tipiMotore": [
-      "1.2"
-    ],
-    "carrozzeria": "MPV",
-    "inizioProduzione": 1998,
-    "fineProduzione": 2010
-  },
-  {
-    "marca": "Fiat",
-    "modello": "Idea",
-    "tipiMotore": [
-      "1.4",
-      "1.6"
-    ],
-    "carrozzeria": "MPV",
-    "inizioProduzione": 2003,
-    "fineProduzione": 2012
   },
   {
     "marca": "Ford",
