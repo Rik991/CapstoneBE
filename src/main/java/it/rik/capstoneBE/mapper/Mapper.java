@@ -3,6 +3,8 @@ package it.rik.capstoneBE.mapper;
 
 import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.autoparts.AutopartDTO;
+import it.rik.capstoneBE.favourite.Favourite;
+import it.rik.capstoneBE.favourite.FavouriteDTO;
 import it.rik.capstoneBE.price.Prezzo;
 import it.rik.capstoneBE.price.PrezzoInfo;
 import it.rik.capstoneBE.rating.RatingRepository;
@@ -49,7 +51,7 @@ public class Mapper {
         return response;
     }
 
-    // Metodi di mapping ausiliari
+    // Metodi di mapping per i DTO info
     public VehicleInfo mapVehicle(Vehicle vehicle) {
         VehicleInfo info = new VehicleInfo();
         info.setId(vehicle.getId());
@@ -70,6 +72,14 @@ public class Mapper {
         info.setRagioneSociale(reseller.getRagioneSociale());
         info.setSitoWeb(reseller.getSitoWeb());
         return info;
+    }
+
+    //mapping DTO favoriti
+    public FavouriteDTO matToFavouriteDTO(Favourite favourite){
+        FavouriteDTO favouriteDTO = new FavouriteDTO();
+        favouriteDTO.setAutopartId(favourite.getAutopart().getId());
+        favouriteDTO.setUserId(favourite.getUser().getId());
+        return favouriteDTO;
     }
 
 
