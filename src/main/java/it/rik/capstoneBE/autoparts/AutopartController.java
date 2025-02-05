@@ -71,7 +71,6 @@ public class AutopartController {
     }
 
     @GetMapping(value = "/{id}")
-    @PreAuthorize("hasRole('RESELLER')")
     public ResponseEntity<AutopartDTO.Response> getById (@PathVariable Long id, @AuthenticationPrincipal UserDetails userDetails){
         return ResponseEntity.ok(autopartService.getAutopartById(id, userDetails.getUsername()));
     }
@@ -115,6 +114,12 @@ public class AutopartController {
 
         return ResponseEntity.ok(autopartService.searchAutoparts(
                 codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizioneEnum, search, searchWord, pageable));
+    }
+
+    // Nuovo endpoint pubblico: non richiede l'utente venditore per la pagina user-page
+    @GetMapping("/public/{id}")
+    public ResponseEntity<AutopartDTO.Response> getAutopartByIdPublic(@PathVariable Long id){
+        return ResponseEntity.ok(autopartService.getAutopartById(id));
     }
 
 

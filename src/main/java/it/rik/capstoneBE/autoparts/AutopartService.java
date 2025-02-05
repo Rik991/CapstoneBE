@@ -47,6 +47,12 @@ public class AutopartService {
         return mapper.mapToResponse(autopart);
     }
 
+    public AutopartDTO.Response getAutopartById(Long id) {
+        return autopartRepository.findById(id)
+                .map(mapper::mapToResponse)
+                .orElseThrow(() -> new EntityNotFoundException("Autopart non trovato"));
+    }
+
     @Transactional
     public AutopartDTO.Response createAutopart(AutopartDTO.Request request, String username) {
         Reseller reseller = null;
@@ -203,6 +209,8 @@ public class AutopartService {
         );
         return autopartsPage.map(autopart -> mapper.mapToResponse(autopart));
     }
+
+
 
 
 }

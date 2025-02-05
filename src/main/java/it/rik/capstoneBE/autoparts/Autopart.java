@@ -22,7 +22,7 @@ public class Autopart {
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String codiceOe;
 
     private String descrizione;
