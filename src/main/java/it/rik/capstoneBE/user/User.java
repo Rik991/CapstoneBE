@@ -30,6 +30,8 @@ public class User {
 
     private String avatar;
 
+    private String phoneNumber;
+
     @ElementCollection(fetch = FetchType.EAGER)
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;

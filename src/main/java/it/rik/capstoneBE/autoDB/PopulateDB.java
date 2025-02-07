@@ -57,6 +57,7 @@ public class PopulateDB {
                     resellerRequest.setEmail("reseller@epicode.it" + i);
                     resellerRequest.setName("Reseller" + i);
                     resellerRequest.setSurname("Venditore" + i);
+                    resellerRequest.setPhoneNumber("349751257" + i);
                     resellerRequest.setRagioneSociale("Reseller SRL" + i);
                     resellerRequest.setPartitaIva("12345678901" + i);
                     resellerRequest.setSitoWeb("www.reseller" + i + ".it");

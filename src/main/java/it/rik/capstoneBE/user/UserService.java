@@ -119,4 +119,34 @@ public class UserService {
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new EntityNotFoundException("Utente non trovato con username: " + username));
     }
+
+    public User updateUser(Long userId, RegisterRequest updateRequest, MultipartFile avatar) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new EntityNotFoundException("Utente non trovato"));
+
+        BeanUtils.copyProperties(updateRequest, user, "id", "username", "password", "roles");
+
+        if (avatar != null && !avatar.isEmpty()) {
+            String fileName = fileStorageServiceAmazon.storeFile(avatar);
+            user.setAvatar(fileName);
+        }
+
+        return userRepository.save(user);
+    }
+
+    public User updateReseller(Long userId, RegisterRequest updateRequest, MultipartFile avatar) {
+        User user = updateUser(userId, updateRequest, avatar);
+
+        Reseller reseller = resellerRepository.findByUserUsername(user.getUsername())
+                .orElseThrow(() -> new EntityNotFoundException("Rivenditore non trovato"));
+
+        reseller.setRagioneSociale(updateRequest.getRagioneSociale());
+        reseller.setPartitaIva(updateRequest.getPartitaIva());
+        reseller.setSitoWeb(updateRequest.getSitoWeb());
+
+        resellerRepository.save(reseller);
+
+        return user;
+    }
+
 }

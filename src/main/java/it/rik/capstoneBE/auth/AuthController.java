@@ -66,4 +66,40 @@ public class AuthController {
         AuthResponse authResponse = userService.authenticateUser(loginRequest.getUsername(), loginRequest.getPassword());
         return ResponseEntity.ok(authResponse);
     }
+
+
+    @PutMapping(path = "/update-user/{userId}", consumes = {"multipart/form-data"})
+    public ResponseEntity<User> updateUser(@PathVariable Long userId,
+                                           @RequestParam("appUser") String appUser,
+                                           @RequestParam(value = "avatar", required = false) MultipartFile avatar) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        RegisterRequest updateRequest;
+
+        try {
+            updateRequest = objectMapper.readValue(appUser, RegisterRequest.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Errore nella conversione del JSON", e);
+        }
+
+        User updatedUser = userService.updateUser(userId, updateRequest, avatar);
+        return ResponseEntity.ok(updatedUser);
+    }
+
+    @PutMapping(path = "/update-reseller/{userId}", consumes = {"multipart/form-data"})
+    public ResponseEntity<User> updateReseller(@PathVariable Long userId,
+                                               @RequestParam("appUser") String appUser,
+                                               @RequestParam(value = "avatar", required = false) MultipartFile avatar) {
+        ObjectMapper objectMapper = new ObjectMapper();
+        RegisterRequest updateRequest;
+
+        try {
+            updateRequest = objectMapper.readValue(appUser, RegisterRequest.class);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException("Errore nella conversione del JSON", e);
+        }
+
+        User updatedReseller = userService.updateReseller(userId, updateRequest, avatar);
+        return ResponseEntity.ok(updatedReseller);
+    }
+
 }

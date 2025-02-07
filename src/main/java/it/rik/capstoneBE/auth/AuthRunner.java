@@ -32,6 +32,7 @@ public class AuthRunner implements ApplicationRunner {
             adminRequest.setEmail("admin@epicode.it");
             adminRequest.setName("Admin");
             adminRequest.setSurname("Supremo");
+            adminRequest.setPhoneNumber("3351574563");
             userService.registerUser(adminRequest, null, Set.of(Role.ROLE_ADMIN));
         }
 
@@ -44,6 +45,7 @@ public class AuthRunner implements ApplicationRunner {
             userRequest.setEmail("user@epicode.it");
             userRequest.setName("User");
             userRequest.setSurname("Schiavo");
+            userRequest.setPhoneNumber("3391524563");
             userService.registerUser(userRequest, null, Set.of(Role.ROLE_USER));
         }
 

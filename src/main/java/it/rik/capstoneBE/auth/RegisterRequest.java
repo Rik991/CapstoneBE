@@ -9,6 +9,7 @@ public class RegisterRequest {
     private String email;
     private String name;
     private String surname;
+    private String phoneNumber;
 
     // Campi specifici del rivenditore
     private String ragioneSociale;
