@@ -1,5 +1,15 @@
 [
   {
+    "marca": "Universale",
+    "modello": "Generico",
+    "tipiMotore": [
+      "Qualsiasi"
+    ],
+    "carrozzeria": "Generico",
+    "inizioProduzione": 1990,
+    "fineProduzione": null
+  },
+  {
     "marca": "Abarth",
     "modello": "595",
     "tipiMotore": [
