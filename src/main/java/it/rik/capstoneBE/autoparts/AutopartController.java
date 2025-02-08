@@ -75,9 +75,16 @@ public class AutopartController {
         return ResponseEntity.ok(autopartService.getAutopartById(id, userDetails.getUsername()));
     }
 
+    @GetMapping("/public/reseller/{resellerId}")
+    public ResponseEntity<Page<AutopartDTO.Response>> getAutopartsByResellerPublic(
+            @PathVariable Long resellerId,
+            Pageable pageable
+    ) {
+        return ResponseEntity.ok(autopartService.getAllAutopartsByResellerId(resellerId, pageable));
+    }
+
 
     @GetMapping("/reseller")
-    @PreAuthorize("hasRole('RESELLER')")
     public ResponseEntity<Page<AutopartDTO.Response>> getByReseller(
             @AuthenticationPrincipal UserDetails userDetails,
             Pageable pageable

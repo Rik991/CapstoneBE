@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class ResellerInfo {
+    private Long id;
     private String ragioneSociale;
     private String sitoWeb;
     private Double ratingMedio;

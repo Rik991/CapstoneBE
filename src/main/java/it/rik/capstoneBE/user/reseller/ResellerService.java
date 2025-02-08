@@ -19,8 +19,9 @@ public class ResellerService {
        return resellerRepository.findAll();
     }
 
-    public Reseller getResellerById(Long resellerId){
-        return resellerRepository.findById(resellerId).orElseThrow(()-> new EntityNotFoundException("reseller non trovato"));
+    public Reseller getResellerByUserId(Long userId) {
+        return resellerRepository.findByUserId(userId)
+                .orElseThrow(() -> new EntityNotFoundException("Reseller not found for user id: " + userId));
     }
 
 }

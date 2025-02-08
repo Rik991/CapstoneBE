@@ -69,6 +69,7 @@ public class Mapper {
 
     public ResellerInfo mapReseller(Reseller reseller) {
         ResellerInfo info = new ResellerInfo();
+        info.setId(reseller.getId());
         info.setRagioneSociale(reseller.getRagioneSociale());
         info.setSitoWeb(reseller.getSitoWeb());
         return info;

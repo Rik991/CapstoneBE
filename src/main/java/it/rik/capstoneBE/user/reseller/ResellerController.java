@@ -24,12 +24,10 @@ public class ResellerController {
         return ResponseEntity.ok(resellerList);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Reseller> getResellerById (@PathVariable Long id){
-
-        Reseller reseller = resellerService.getResellerById(id);
+    @GetMapping("/by-user/{userId}")
+    public ResponseEntity<Reseller> getResellerByUserId(@PathVariable Long userId) {
+        Reseller reseller = resellerService.getResellerByUserId(userId);
         return ResponseEntity.ok(reseller);
-
     }
 
 }

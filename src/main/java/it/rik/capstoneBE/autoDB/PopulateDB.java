@@ -41,32 +41,11 @@ public class PopulateDB {
 
     @PostConstruct
     public void init() {
-        loadResellers();
+
         loadVehicles();
 
     }
 
-    private void loadResellers() {
-        if (resellerRepository.count() == 0) {
-            for (int i = 1; i <= 5; i++) {
-                Optional<User> resellerUser = userService.findByUsername("reseller" + i);
-                if (resellerUser.isEmpty()) {
-                    RegisterRequest resellerRequest = new RegisterRequest();
-                    resellerRequest.setUsername("reseller" + i);
-                    resellerRequest.setPassword("resellerpwd" + i);
-                    resellerRequest.setEmail("reseller@epicode.it" + i);
-                    resellerRequest.setName("Reseller" + i);
-                    resellerRequest.setSurname("Venditore" + i);
-                    resellerRequest.setPhoneNumber("349751257" + i);
-                    resellerRequest.setRagioneSociale("Reseller SRL" + i);
-                    resellerRequest.setPartitaIva("12345678901" + i);
-                    resellerRequest.setSitoWeb("www.reseller" + i + ".it");
-                    userService.registerReseller(resellerRequest, null);
-                }
-            }
-            System.out.println("Database popolato con 5 rivenditori di esempio.");
-        }
-    }
 
     private void loadVehicles() {
         if(vehicleRepository.count() == 0){

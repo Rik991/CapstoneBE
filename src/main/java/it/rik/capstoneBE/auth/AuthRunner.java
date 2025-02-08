@@ -23,7 +23,6 @@ public class AuthRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        // Creazione dell'utente admin se non esiste
         Optional<User> adminUser = userService.findByUsername("admin");
         if (adminUser.isEmpty()) {
             RegisterRequest adminRequest = new RegisterRequest();
@@ -33,10 +32,10 @@ public class AuthRunner implements ApplicationRunner {
             adminRequest.setName("Admin");
             adminRequest.setSurname("Supremo");
             adminRequest.setPhoneNumber("3351574563");
-            userService.registerUser(adminRequest, null, Set.of(Role.ROLE_ADMIN));
+            userService.registerAdmin(adminRequest, null);
         }
 
-        // Creazione dell'utente user se non esiste
+        // Creazione dell'utente normale se non esiste
         Optional<User> normalUser = userService.findByUsername("user");
         if (normalUser.isEmpty()) {
             RegisterRequest userRequest = new RegisterRequest();
@@ -46,23 +45,31 @@ public class AuthRunner implements ApplicationRunner {
             userRequest.setName("User");
             userRequest.setSurname("Schiavo");
             userRequest.setPhoneNumber("3391524563");
-            userService.registerUser(userRequest, null, Set.of(Role.ROLE_USER));
+            userService.registerUser(userRequest, null);
         }
 
-//        Optional<User> resellerUser = userService.findByUsername("reseller");
-//        if (resellerUser.isEmpty()) {
-//            RegisterRequest resellerRequest = new RegisterRequest();
-//            resellerRequest.setUsername("reseller");
-//            resellerRequest.setPassword("resellerpwd");
-//            resellerRequest.setEmail("reseller@epicode.it");
-//            resellerRequest.setName("Reseller");
-//            resellerRequest.setSurname("Venditore");
-//            resellerRequest.setRagioneSociale("Reseller SRL");
-//            resellerRequest.setPartitaIva("12345678901");
-//            userService.registerReseller(resellerRequest, null);
-//        }
+        // Creazione di 5 venditori (reseller) se non esistono già
+        for (int i = 1; i <= 5; i++) {
+            String username = "reseller" + i;
+            Optional<User> resellerUser = userService.findByUsername(username);
+            if (resellerUser.isEmpty()) {
+                RegisterRequest resellerRequest = new RegisterRequest();
+                resellerRequest.setUsername(username);
+                resellerRequest.setPassword("resellerpwd" + i);
+                resellerRequest.setEmail("reseller" + i + "@epicode.it");
+                resellerRequest.setName("Reseller" + i);
+                resellerRequest.setSurname("Venditore" + i);
+                resellerRequest.setPhoneNumber("33515745" + i);
+
+                // Impostiamo i campi specifici per il venditore
+                resellerRequest.setRagioneSociale("Reseller SRL " + i);
+                resellerRequest.setPartitaIva("12345678901" + i);
+                resellerRequest.setSitoWeb("www.reseller" + i + ".it");
+
+                userService.registerReseller(resellerRequest, null);
+            }
+        }
     }
 }
-
 
 

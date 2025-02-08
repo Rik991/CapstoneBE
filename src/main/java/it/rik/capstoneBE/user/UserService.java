@@ -17,6 +17,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Optional;
@@ -43,52 +44,49 @@ public class UserService {
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
 
-    public User registerUser(RegisterRequest registerRequest, MultipartFile avatar, Set<Role> roles) {
-        if (userRepository.existsByUsername(registerRequest.getUsername())) {
-            throw new EntityExistsException("Username già in uso");
+
+    //metodo per creare uno user generico, verrà poi usato per register-user o register-reseller
+    private User createUser (RegisterRequest registerRequest, MultipartFile avatar, Set<Role> roles){
+        if (userRepository.existsByUsername(registerRequest.getUsername())){
+            throw new EntityExistsException("Username già utilizzato");
         }
-
         registerRequest.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
-
         User user = new User();
         BeanUtils.copyProperties(registerRequest, user);
 
-        if (avatar != null && !avatar.isEmpty()) {
+        if(avatar != null && !avatar.isEmpty()){
             String fileName = fileStorageServiceAmazon.storeFile(avatar);
             user.setAvatar(fileName);
         }
-
         user.setRoles(roles);
         return userRepository.save(user);
     }
 
-    public User registerReseller(RegisterRequest registerRequest, MultipartFile avatar) {
-        if (userRepository.existsByUsername(registerRequest.getUsername())) {
-            throw new EntityExistsException("Username già in uso");
-        }
+    public User registerUser (RegisterRequest registerRequest, MultipartFile avatar){
+        return createUser(registerRequest, avatar, Set.of(Role.ROLE_USER));
+    }
 
-        registerRequest.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+    public User registerAdmin (RegisterRequest registerRequest, MultipartFile avatar){
+        return createUser(registerRequest, avatar, Set.of(Role.ROLE_ADMIN));
+    }
+    @Transactional
+    public User registerReseller (RegisterRequest registerRequest, MultipartFile avatar){
 
-        User user = new User();
-        BeanUtils.copyProperties(registerRequest, user);
-
-        if (avatar != null && !avatar.isEmpty()) {
-            String fileName = fileStorageServiceAmazon.storeFile(avatar);
-            user.setAvatar(fileName);
-        }
-
-        user.setRoles(Set.of(Role.ROLE_RESELLER));
-        User savedUser = userRepository.save(user);
-
+        User user = createUser(registerRequest, avatar, Set.of(Role.ROLE_RESELLER));
         Reseller reseller = new Reseller();
+        reseller.setUser(user);
         reseller.setRagioneSociale(registerRequest.getRagioneSociale());
         reseller.setPartitaIva(registerRequest.getPartitaIva());
         reseller.setSitoWeb(registerRequest.getSitoWeb());
-        reseller.setUser(savedUser);
         resellerRepository.save(reseller);
 
-        return savedUser;
+        return user;
+
     }
+
+
+
+
 
     public Optional<User> findByUsername(String username) {
         return userRepository.findByUsername(username);
@@ -134,19 +132,18 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public User updateReseller(Long userId, RegisterRequest updateRequest, MultipartFile avatar) {
+    @Transactional
+    public Reseller updateReseller(Long userId, RegisterRequest updateRequest, MultipartFile avatar) {
+        // Aggiorna i dati comuni dello User
         User user = updateUser(userId, updateRequest, avatar);
 
-        Reseller reseller = resellerRepository.findByUserUsername(user.getUsername())
+        // Aggiorna i dati specifici del Reseller
+        Reseller reseller = resellerRepository.findByUserId(user.getId())
                 .orElseThrow(() -> new EntityNotFoundException("Rivenditore non trovato"));
-
         reseller.setRagioneSociale(updateRequest.getRagioneSociale());
         reseller.setPartitaIva(updateRequest.getPartitaIva());
         reseller.setSitoWeb(updateRequest.getSitoWeb());
-
-        resellerRepository.save(reseller);
-
-        return user;
+        return resellerRepository.save(reseller);
     }
 
 }
