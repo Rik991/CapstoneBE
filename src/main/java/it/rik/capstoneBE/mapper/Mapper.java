@@ -42,7 +42,7 @@ public class Mapper {
 
         if (autopart.getReseller() != null) {
             response.setReseller(mapReseller(autopart.getReseller()));
-            response.setRatingMedio(ratingRepository.calculateAverageRating(autopart.getReseller().getId()).orElse(0.0));
+            response.setRatingMedio(ratingRepository.calculateAverageRating(autopart.getReseller().getId()));
         } else {
             response.setReseller(null);
             response.setRatingMedio(0.0);
@@ -72,6 +72,8 @@ public class Mapper {
         info.setId(reseller.getId());
         info.setRagioneSociale(reseller.getRagioneSociale());
         info.setSitoWeb(reseller.getSitoWeb());
+        Double avg = ratingRepository.calculateAverageRating(reseller.getId());
+        info.setRatingMedio(avg);
         return info;
     }
 

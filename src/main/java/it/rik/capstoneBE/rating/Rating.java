@@ -5,7 +5,6 @@ import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "ratings")
@@ -15,15 +14,17 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    @Column(nullable = false)
+   private int rating;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Reseller reseller;
 
-    private Integer voto;
+   private String comment;
 
-    private String commento;
+   @ManyToOne(optional = false)
+   @JoinColumn(name = "reseller_id", nullable = false)
+   private Reseller reseller;
 
-    private LocalDateTime dataCreazione = LocalDateTime.now();
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id", nullable = false)
+   private User user;
 }
