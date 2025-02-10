@@ -43,6 +43,7 @@ public interface AutopartRepository extends JpaRepository<Autopart, Long> {
             "  AND (:search IS NULL OR (" +
             "    LOWER(a.nome) LIKE %:search% " +
             "    OR LOWER(a.descrizione) LIKE %:search% " +
+            "    OR LOWER(a.codiceOe) LIKE %:search% " +
             "    OR LOWER(a.descrizione) LIKE %:searchWords% " +
             "  ))")
     Page<Autopart> search(
