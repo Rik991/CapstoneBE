@@ -146,4 +146,9 @@ public class UserService {
         return resellerRepository.save(reseller);
     }
 
+    public User getUserById(Long userId){
+        return userRepository.findById(userId)
+                .orElseThrow(()-> new EntityNotFoundException("User non trovato"));
+    }
+
 }

@@ -62,6 +62,22 @@ public class AuthController {
         return ResponseEntity.ok(authResponse);
     }
 
+    @PutMapping(path = "/update-user/{userId}", consumes = {"multipart/form-data"})
+    public ResponseEntity<User> updateUser(@PathVariable Long userId,
+                                           @RequestParam("appUser") String appUser,
+                                           @RequestParam(value = "avatar", required = false)MultipartFile avatar){
+        ObjectMapper objectMapper = new ObjectMapper();
+        RegisterRequest updateRequest;
+
+        try {
+            updateRequest = objectMapper.readValue(appUser, RegisterRequest.class);
+        }catch (JsonProcessingException e) {
+            throw new RuntimeException("Errore nella conversione del JSON", e);
+        }
+        User updatedUser = userService.updateUser(userId, updateRequest, avatar);
+        return  ResponseEntity.ok(updatedUser);
+    }
+
     @PutMapping(path = "/update-reseller/{userId}", consumes = {"multipart/form-data"})
     public ResponseEntity<Reseller> updateReseller(@PathVariable Long userId,
                                                    @RequestParam("appUser") String appUser,
@@ -78,4 +94,11 @@ public class AuthController {
         Reseller updatedReseller = userService.updateReseller(userId, updateRequest, avatar);
         return ResponseEntity.ok(updatedReseller);
     }
+
+     @GetMapping("/{userId}")
+    public ResponseEntity<User> getUserById(@PathVariable Long userId){
+        User user = userService.getUserById(userId);
+                return ResponseEntity.ok(user);
+    }
+
 }
