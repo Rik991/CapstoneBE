@@ -1,5 +1,6 @@
 package it.rik.capstoneBE.price;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
@@ -22,6 +23,7 @@ public class Prezzo {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autopart_id")
+    @JsonBackReference
     private Autopart autopart;
 
     @ManyToOne(fetch = FetchType.LAZY)

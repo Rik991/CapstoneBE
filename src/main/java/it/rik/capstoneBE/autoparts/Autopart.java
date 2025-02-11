@@ -1,5 +1,6 @@
 package it.rik.capstoneBE.autoparts;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import it.rik.capstoneBE.price.Prezzo;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.vehicle.Vehicle;
@@ -42,6 +43,7 @@ public class Autopart {
     private Set<Vehicle> veicoliCompatibili = new HashSet<>();
 
     @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Prezzo> prezzi = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
