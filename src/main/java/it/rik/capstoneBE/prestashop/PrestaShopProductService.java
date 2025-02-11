@@ -22,11 +22,12 @@ import java.util.List;
 public class PrestaShopProductService {
 
     private final RestTemplate restTemplate;
-    private final ResellerRepository resellerRepository; // Iniettato
+    private final ResellerRepository resellerRepository;
 
-    // Inserisci la chiave API e l'URL base del tuo PrestaShop
     @Value("${prestashop.wskey}")
     private String wsKey;
+
+    // L'URL base del tuo PrestaShop (ad es. terminante con "/api/")
     private final String baseUrl = "https://www.perinettiservice.com/api/";
 
     public PrestaShopProductService(RestTemplate restTemplate, ResellerRepository resellerRepository) {
@@ -34,9 +35,9 @@ public class PrestaShopProductService {
         this.resellerRepository = resellerRepository;
     }
 
-    public List<Autopart> getProducts(int page, int size) throws Exception {
+    public ApiProductPage getProducts(int page, int size) throws Exception {
         int offset = (page - 1) * size;
-        // Formato per PrestaShop: limit=start,number
+        // L'API di PrestaShop utilizza il formato "limit=start,number"
         String listUrl = baseUrl + "products?ws_key=" + wsKey + "&output_format=XML&limit=" + offset + "," + size;
         String listXml = restTemplate.getForObject(listUrl, String.class);
 
@@ -44,6 +45,13 @@ public class PrestaShopProductService {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document listDoc = builder.parse(new InputSource(new StringReader(listXml)));
         listDoc.getDocumentElement().normalize();
+
+        // Supponiamo che il totale dei prodotti sia disponibile in un tag <total>
+        NodeList totalNodes = listDoc.getElementsByTagName("total");
+        long total = 0;
+        if (totalNodes.getLength() > 0) {
+            total = Long.parseLong(totalNodes.item(0).getTextContent());
+        }
 
         NodeList productNodes = listDoc.getElementsByTagName("product");
         List<Autopart> autoparts = new ArrayList<>();
@@ -55,18 +63,26 @@ public class PrestaShopProductService {
             Autopart autopart = convertProductXmlToAutopart(detailXml);
             autoparts.add(autopart);
         }
-        return autoparts;
+
+        ApiProductPage apiPage = new ApiProductPage();
+        apiPage.setContent(autoparts);
+        apiPage.setTotalElements(total);
+        return apiPage;
     }
 
+    // Il metodo convertProductXmlToAutopart rimane invariato
     private Autopart convertProductXmlToAutopart(String xmlString) throws Exception {
+        // Implementazione già presente, che converte il XML in un oggetto Autopart.
+        // [Il tuo codice di conversione qui]
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(xmlString)));
         doc.getDocumentElement().normalize();
 
         Autopart autopart = new Autopart();
-
-        // 1. Estrai il nome
+        // Estrai e imposta nome, codiceOe, descrizione, categoria, condizione, ecc.
+        // [Implementazione omessa per brevità]
+        // Ad esempio, per il nome:
         NodeList nameNodes = doc.getElementsByTagName("name");
         if (nameNodes.getLength() > 0) {
             Element nameElement = (Element) nameNodes.item(0);

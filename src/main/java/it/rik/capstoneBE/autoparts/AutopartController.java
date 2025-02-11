@@ -47,6 +47,33 @@ public class AutopartController {
         return ResponseEntity.ok(autopartService.getAllAutoparts(pageable));
     }
 
+    @GetMapping("/merged")
+    public ResponseEntity<Page<AutopartDTO.Response>> getMergedAutoparts(
+            @RequestParam(required = false) String codiceOe,
+            @RequestParam(required = false) String categoria,
+            @RequestParam(required = false) String marca,
+            @RequestParam(required = false) String modello,
+            @RequestParam(required = false) Double minPrezzo,
+            @RequestParam(required = false) Double maxPrezzo,
+            @RequestParam(required = false) String condizione, // come String
+            @RequestParam(required = false) String search,
+            @RequestParam(required = false) String searchWord,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "12") int size,
+            @RequestParam(defaultValue = "nome") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir) {
+
+        Condizione condizioneEnum = (condizione == null || condizione.trim().isEmpty())
+                ? null
+                : Condizione.valueOf(condizione.toUpperCase());
+        Sort.Direction direction = Sort.Direction.fromString(sortDir);
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sortBy));
+
+        Page<AutopartDTO.Response> merged = autopartService.getMergedAutoparts(
+                codiceOe, categoria, marca, modello, minPrezzo, maxPrezzo, condizioneEnum, search, searchWord, pageable);
+        return ResponseEntity.ok(merged);
+    }
+
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<AutopartDTO.Response> createAutopart(
             @ModelAttribute AutopartDTO.Request request,
