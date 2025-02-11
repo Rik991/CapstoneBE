@@ -6,6 +6,7 @@ import it.rik.capstoneBE.price.Prezzo;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.w3c.dom.*;
@@ -24,7 +25,8 @@ public class PrestaShopProductService {
     private final ResellerRepository resellerRepository; // Iniettato
 
     // Inserisci la chiave API e l'URL base del tuo PrestaShop
-    private final String wsKey = "4HK9QL4EL4WR3TLL954V4M8X23DHFCLP"; // Assicurati che sia valorizzata
+    @Value("${prestashop.wskey}")
+    private String wsKey;
     private final String baseUrl = "https://www.perinettiservice.com/api/";
 
     public PrestaShopProductService(RestTemplate restTemplate, ResellerRepository resellerRepository) {
