@@ -9,9 +9,11 @@ import it.rik.capstoneBE.user.reseller.Reseller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Set;
 
 @RestController
@@ -95,10 +97,24 @@ public class AuthController {
         return ResponseEntity.ok(updatedReseller);
     }
 
+    @GetMapping
+    public ResponseEntity<List<User>> getAll(){
+        List<User> users = userService.getAllUser();
+        return ResponseEntity.ok(users);
+    }
+
      @GetMapping("/{userId}")
     public ResponseEntity<User> getUserById(@PathVariable Long userId){
         User user = userService.getUserById(userId);
                 return ResponseEntity.ok(user);
     }
+
+    @DeleteMapping("/{userId}")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long userId){
+       userService.deleteUser(userId);
+       return ResponseEntity.noContent().build();
+    }
+
 
 }

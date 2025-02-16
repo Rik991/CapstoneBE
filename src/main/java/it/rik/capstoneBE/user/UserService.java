@@ -20,6 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -84,6 +85,9 @@ public class UserService {
 
     }
 
+    public List<User> getAllUser (){
+       return userRepository.findAll();
+    }
 
 
 
@@ -149,6 +153,16 @@ public class UserService {
     public User getUserById(Long userId){
         return userRepository.findById(userId)
                 .orElseThrow(()-> new EntityNotFoundException("User non trovato"));
+    }
+
+
+    @Transactional
+    public void deleteUser(Long userId){
+        User user = userRepository.findById(userId).orElseThrow(()-> new EntityNotFoundException("Utente non trovato"));
+                //se rivenditore eliminiamo anche il record dalla tabella
+        resellerRepository.findByUserId(userId).ifPresent(resellerRepository::delete);
+
+        userRepository.delete(user);
     }
 
 }
