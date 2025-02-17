@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class RatingService {
 
@@ -47,4 +49,10 @@ public class RatingService {
         Double avg = ratingRepository.calculateAverageRating(resellerId);
         return (avg != null) ? avg : 0.0;
     }
+
+    @Transactional(readOnly = true)
+    public List<Rating> getRatingsForReseller(Long resellerId){
+        return ratingRepository.findByResellerId(resellerId);
+    }
+
 }

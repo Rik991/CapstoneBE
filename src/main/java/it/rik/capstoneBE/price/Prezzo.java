@@ -4,6 +4,8 @@ import it.rik.capstoneBE.autoparts.Autopart;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.time.LocalDateTime;
 
@@ -22,9 +24,11 @@ public class Prezzo {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "autopart_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Autopart autopart;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reseller_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Reseller reseller;
 }

@@ -4,6 +4,8 @@ import it.rik.capstoneBE.user.User;
 import it.rik.capstoneBE.user.reseller.Reseller;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 
 @Entity
@@ -22,9 +24,11 @@ public class Rating {
 
    @ManyToOne(optional = false)
    @JoinColumn(name = "reseller_id", nullable = false)
+   @OnDelete(action = OnDeleteAction.CASCADE)
    private Reseller reseller;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "user_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
    private User user;
 }

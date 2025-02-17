@@ -5,6 +5,8 @@ import it.rik.capstoneBE.user.reseller.Reseller;
 import it.rik.capstoneBE.vehicle.Vehicle;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -39,6 +41,7 @@ public class Autopart {
             joinColumns = @JoinColumn(name = "autopart_id"),
             inverseJoinColumns = @JoinColumn(name = "vehicle_id")
     )
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<Vehicle> veicoliCompatibili = new HashSet<>();
 
     @OneToMany(mappedBy = "autopart", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -46,5 +49,6 @@ public class Autopart {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "reseller_id")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Reseller reseller;
 }
