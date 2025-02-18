@@ -49,39 +49,39 @@ public class AuthRunner implements ApplicationRunner {
         }
 
         // Creazione dell'utente normale se non esiste
-        Optional<User> normalUser = userService.findByUsername("user");
-        if (normalUser.isEmpty()) {
-            RegisterRequest userRequest = new RegisterRequest();
-            userRequest.setUsername("user");
-            userRequest.setPassword("userpwd");
-            userRequest.setEmail("user@epicode.it");
-            userRequest.setName("User");
-            userRequest.setSurname("Schiavo");
-            userRequest.setPhoneNumber("3391524563");
-            userService.registerUser(userRequest, null);
-        }
+//        Optional<User> normalUser = userService.findByUsername("user");
+//        if (normalUser.isEmpty()) {
+//            RegisterRequest userRequest = new RegisterRequest();
+//            userRequest.setUsername("user");
+//            userRequest.setPassword("userpwd");
+//            userRequest.setEmail("user@epicode.it");
+//            userRequest.setName("User");
+//            userRequest.setSurname("Schiavo");
+//            userRequest.setPhoneNumber("3391524563");
+//            userService.registerUser(userRequest, null);
+//        }
 
         // Creazione di 5 venditori (reseller) se non esistono già
-        for (int i = 1; i <= 5; i++) {
-            String username = "reseller" + i;
-            Optional<User> resellerUser = userService.findByUsername(username);
-            if (resellerUser.isEmpty()) {
-                RegisterRequest resellerRequest = new RegisterRequest();
-                resellerRequest.setUsername(username);
-                resellerRequest.setPassword("resellerpwd" + i);
-                resellerRequest.setEmail("reseller" + i + "@epicode.it");
-                resellerRequest.setName("Reseller" + i);
-                resellerRequest.setSurname("Venditore" + i);
-                resellerRequest.setPhoneNumber("33515745" + i);
-
-                // Impostiamo i campi specifici per il venditore
-                resellerRequest.setRagioneSociale("Reseller SRL " + i);
-                resellerRequest.setPartitaIva("12345678901" + i);
-                resellerRequest.setSitoWeb("www.reseller" + i + ".it");
-
-                userService.registerReseller(resellerRequest, null);
-            }
-        }
+//        for (int i = 1; i <= 5; i++) {
+//            String username = "reseller" + i;
+//            Optional<User> resellerUser = userService.findByUsername(username);
+//            if (resellerUser.isEmpty()) {
+//                RegisterRequest resellerRequest = new RegisterRequest();
+//                resellerRequest.setUsername(username);
+//                resellerRequest.setPassword("resellerpwd" + i);
+//                resellerRequest.setEmail("reseller" + i + "@epicode.it");
+//                resellerRequest.setName("Reseller" + i);
+//                resellerRequest.setSurname("Venditore" + i);
+//                resellerRequest.setPhoneNumber("33515745" + i);
+//
+//                // Impostiamo i campi specifici per il venditore
+//                resellerRequest.setRagioneSociale("Reseller SRL " + i);
+//                resellerRequest.setPartitaIva("12345678901" + i);
+//                resellerRequest.setSitoWeb("www.reseller" + i + ".it");
+//
+//                userService.registerReseller(resellerRequest, null);
+//            }
+//        }
         // --- Generazione di 15 ricambi (autoparts) random per ogni reseller ---
 //        Faker faker = new Faker();
 //
