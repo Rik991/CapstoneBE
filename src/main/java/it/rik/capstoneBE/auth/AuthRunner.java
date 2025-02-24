@@ -36,17 +36,17 @@ public class AuthRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Optional<User> adminUser = userService.findByUsername("admin");
-
+        Optional<User> adminUser = userService.findByUsername("admin1");
+        if(adminUser.isEmpty()) {
             RegisterRequest adminRequest = new RegisterRequest();
-            adminRequest.setUsername("admin");
+            adminRequest.setUsername("admin1");
             adminRequest.setPassword("adminpwd");
             adminRequest.setEmail("admin@info.it");
             adminRequest.setName("AdminPro");
             adminRequest.setSurname("Maestro");
             adminRequest.setPhoneNumber("3351574573");
             userService.registerAdmin(adminRequest, null);
-
+        }
 
         // Creazione dell'utente normale se non esiste
 //        Optional<User> normalUser = userService.findByUsername("user");
