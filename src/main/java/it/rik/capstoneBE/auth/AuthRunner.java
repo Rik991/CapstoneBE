@@ -12,6 +12,7 @@ import it.rik.capstoneBE.user.reseller.ResellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +22,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Component
+@Profile("!prod")
 public class AuthRunner implements ApplicationRunner {
 
     @Autowired
@@ -36,17 +38,17 @@ public class AuthRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-//        Optional<User> adminUser = userService.findByUsername("admin1");
-//        if(adminUser.isEmpty()) {
-//            RegisterRequest adminRequest = new RegisterRequest();
-//            adminRequest.setUsername("admin1");
-//            adminRequest.setPassword("adminpwd");
-//            adminRequest.setEmail("admin@info.it");
-//            adminRequest.setName("AdminPro");
-//            adminRequest.setSurname("Maestro");
-//            adminRequest.setPhoneNumber("3351574573");
-//            userService.registerAdmin(adminRequest, null);
-//        }
+        Optional<User> adminUser = userService.findByUsername("admin1");
+        if(adminUser.isEmpty()) {
+            RegisterRequest adminRequest = new RegisterRequest();
+            adminRequest.setUsername("admin1");
+            adminRequest.setPassword("adminpwd");
+            adminRequest.setEmail("admin@info.it");
+            adminRequest.setName("AdminPro");
+            adminRequest.setSurname("Maestro");
+            adminRequest.setPhoneNumber("3351574573");
+            userService.registerAdmin(adminRequest, null);
+        }
 
         // Creazione dell'utente normale se non esiste
 //        Optional<User> normalUser = userService.findByUsername("user");
